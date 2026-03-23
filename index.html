@@ -58,13 +58,45 @@ p{text-align:center;max-width:700px;margin:10px auto 20px;}
 /* Gallery */
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
 .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;transition:0.3s;}
-.gallery img:hover{transform:scale(1.05);}
+.gallery img:hover{transform:scale(1.05);
+      <!-- Reviews Section with Customer Submission Form -->
+<section id="reviews">
+    <div class="container">
+        <h2>Customer Reviews</h2>
 
-/* Reviews Slider */
-.reviews{max-width:800px;margin:auto;position:relative;}
-.review-slide{display:none;text-align:center;padding:20px;box-shadow:0 4px 8px rgba(0,0,0,0.1);border-radius:10px;background:#f9f9f9;}
-.review-slide.active{display:block;}
-.review-slide img{width:60px;height:60px;border-radius:50%;margin-bottom:10px;}
+        <!-- Reviews Slider -->
+        <div class="reviews">
+            <div class="review-slide active">
+                <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Customer">
+                <h4>Rohit Sharma</h4>
+                <p>Amazing experience! The tour was well organized and hotels were great.</p>
+            </div>
+            <div class="review-slide">
+                <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Customer">
+                <h4>Anjali Verma</h4>
+                <p>Best travel agency for Kashmir! Loved the taxi service and package options.</p>
+            </div>
+            <div class="review-slide">
+                <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Customer">
+                <h4>Arjun Singh</h4>
+                <p>Highly recommend Travel Kashmir Now. Professional and friendly staff.</p>
+            </div>
+            <div class="review-slide">
+                <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Customer">
+                <h4>Sarah Malik</h4>
+                <p>Absolutely loved the Kashmir trip! Hotels, taxis, and packages were excellent. Highly recommended!</p>
+            </div>
+        </div> <!-- end of reviews slider -->
+
+        <!-- Customer Review Form -->
+        <div style="margin-top:50px; text-align:center;">
+            <h3>Submit Your Review</h3>
+            <p>We would love to hear your experience!</p>
+            <iframe src="YOUR_GOOGLE_FORM_EMBED_LINK" width="100%" height="500" style="border:0; border-radius:10px;"></iframe>
+        </div>
+
+    </div> <!-- end of container -->
+</section>             
 
 /* Taxi Form */
 .taxi-form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;}
