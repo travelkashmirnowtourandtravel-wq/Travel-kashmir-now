@@ -3,151 +3,274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Kashmir Now | Best Tours in Kashmir</title>
-<meta name="description" content="Book Kashmir tour packages, hotels, taxis with Travel Kashmir Now. Best prices guaranteed. Explore Srinagar, Gulmarg, Pahalgam and Sonamarg with us.">
-<meta name="keywords" content="Kashmir tour, Srinagar travel, Gulmarg packages, Pahalgam tour, Kashmir hotels, Kashmir taxi service">
+<title>Travel Kashmir Now | Explore the Paradise on Earth</title>
+<meta name="description" content="Book Kashmir tour packages, hotels, and taxis with Travel Kashmir Now. Explore the beauty of Kashmir with best prices and reliable services.">
+<meta name="keywords" content="Kashmir tour, Srinagar travel, Gulmarg packages, Pahalgam tours, Kashmir hotels, taxi services in Kashmir">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Simple CSS -->
 <style>
-body { font-family: 'Roboto', sans-serif; margin:0; padding:0; line-height:1.6; color:#333; }
-header { background: #0a3d62; color: #fff; padding: 20px 0; text-align:center; }
-nav a { color: #fff; margin: 0 15px; text-decoration:none; font-weight:bold; }
-.hero { background: url('https://source.unsplash.com/1600x600/?kashmir') no-repeat center center/cover; height: 500px; display:flex; align-items:center; justify-content:center; color:#fff; flex-direction:column; text-align:center; }
-.hero h1 { font-size: 3em; margin: 0; }
-.hero a { margin-top:20px; padding:10px 20px; background:#ff6b6b; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; }
-section { padding:50px 20px; max-width:1200px; margin:0 auto; }
-h2 { color:#0a3d62; text-align:center; margin-bottom:30px; }
-.tour-card, .hotel-card, .taxi-card, .review-card { border:1px solid #ddd; padding:20px; border-radius:5px; margin-bottom:20px; }
-.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
-footer { background:#0a3d62; color:#fff; text-align:center; padding:20px; }
-input, textarea { width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ddd; }
-button { padding:10px 20px; background:#ff6b6b; color:#fff; border:none; border-radius:5px; cursor:pointer; }
-iframe { width:100%; height:300px; border:0; border-radius:5px; }
+/* Basic reset */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+body{line-height:1.6; scroll-behavior: smooth;}
+a{text-decoration:none;color:inherit;}
+.container{width:90%;margin:auto;}
+
+/* Header */
+header{background:#0072b1;color:#fff;position:fixed;width:100%;top:0;z-index:100;}
+header .container{display:flex;justify-content:space-between;align-items:center;padding:15px 0;}
+header nav a{margin:0 15px;font-weight:bold;color:#fff;}
+header nav a:hover{text-decoration:underline;}
+
+/* Hero */
+.hero{background:url('https://source.unsplash.com/1600x700/?kashmir') no-repeat center center/cover;height:90vh;display:flex;justify-content:center;align-items:center;color:#fff;text-align:center;position:relative;}
+.hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+.hero-content{position:relative;}
+.hero h1{font-size:3rem;margin-bottom:20px;animation:fadeInDown 1s;}
+.hero button{padding:12px 25px;font-size:1.2rem;border:none;background:#ff9900;color:#fff;border-radius:5px;cursor:pointer;animation:fadeInUp 1s;}
+
+/* Animations */
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+/* Sections */
+section{padding:80px 0;}
+h2{text-align:center;margin-bottom:40px;color:#0072b1;}
+p{text-align:center;max-width:700px;margin:10px auto 20px;}
+
+/* Packages */
+.packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.package{border-radius:10px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:transform 0.3s;}
+.package:hover{transform:scale(1.05);}
+.package img{width:100%;height:180px;object-fit:cover;}
+.package-content{padding:15px;text-align:center;}
+.package-content h3{margin-bottom:10px;}
+.package-content button{background:#0072b1;color:#fff;border:none;padding:8px 15px;cursor:pointer;border-radius:5px;transition:0.3s;}
+.package-content button:hover{background:#005a86;}
+
+/* Hotels */
+.hotels{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.hotel{border-radius:10px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+.hotel img{width:100%;height:180px;object-fit:cover;}
+.hotel-content{padding:15px;text-align:center;}
+.hotel-content h3{margin-bottom:10px;}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
+.gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;transition:0.3s;}
+.gallery img:hover{transform:scale(1.05);}
+
+/* Reviews Slider */
+.reviews{max-width:800px;margin:auto;position:relative;}
+.review-slide{display:none;text-align:center;padding:20px;box-shadow:0 4px 8px rgba(0,0,0,0.1);border-radius:10px;background:#f9f9f9;}
+.review-slide.active{display:block;}
+.review-slide img{width:60px;height:60px;border-radius:50%;margin-bottom:10px;}
+
+/* Taxi Form */
+.taxi-form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+input, select, textarea{padding:10px;border-radius:5px;border:1px solid #ddd;}
+button.submit-btn{background:#0072b1;color:#fff;padding:10px;border:none;border-radius:5px;cursor:pointer;}
+button.submit-btn:hover{background:#005a86;}
+
+/* Contact */
+form.contact-form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+
+/* Footer */
+footer{background:#222;color:#fff;padding:30px 0;text-align:center;}
+footer a{color:#ff9900;}
+footer i{margin:0 5px;}
 </style>
 </head>
+
 <body>
 
+<!-- Header -->
 <header>
-  <h1>Travel Kashmir Now</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#tours">Tours</a>
-    <a href="#hotels">Hotels</a>
-    <a href="#taxi">Taxi</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <div class="container">
+        <h2>Travel Kashmir Now</h2>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#packages">Packages</a>
+            <a href="#hotels">Hotels</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#taxi">Taxi</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<section class="hero" id="home">
-  <h1>Explore the Beauty of Kashmir</h1>
-  <a href="#tours">Book Your Tour</a>
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Discover the Paradise on Earth</h1>
+        <button onclick="window.location='#packages'">View Packages</button>
+    </div>
 </section>
 
+<!-- About -->
 <section id="about">
-  <h2>About Us</h2>
-  <p>Travel Kashmir Now is your trusted travel partner in Kashmir. We offer personalized tours, hotel bookings, and taxi services to make your journey unforgettable. Our mission is to give you the best experience in Srinagar, Gulmarg, Pahalgam, and Sonamarg.</p>
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Travel Kashmir Now provides unforgettable travel experiences in Kashmir. We offer carefully curated tour packages, premium hotels, and reliable taxi services to make your trip seamless, safe, and memorable.</p>
+    </div>
 </section>
 
-<section id="tours">
-  <h2>Tour Packages</h2>
-  <div class="grid">
-    <div class="tour-card">
-      <h3>Srinagar 3 Days</h3>
-      <p>Houseboats, Shikara rides, Mughal Gardens. Price: ₹8,000/person</p>
+<!-- Packages -->
+<section id="packages">
+    <div class="container">
+        <h2>Tour Packages</h2>
+        <div class="packages">
+            <div class="package">
+                <img src="https://source.unsplash.com/400x300/?srinagar" alt="Srinagar Tour">
+                <div class="package-content">
+                    <h3>Srinagar Tour</h3>
+                    <p>3 Days / 2 Nights | Price: ₹8,000/person</p>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="package">
+                <img src="https://source.unsplash.com/400x300/?gulmarg" alt="Gulmarg Tour">
+                <div class="package-content">
+                    <h3>Gulmarg Adventure</h3>
+                    <p>2 Days / 1 Night | Price: ₹6,000/person</p>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="package">
+                <img src="https://source.unsplash.com/400x300/?pahalgam" alt="Pahalgam Tour">
+                <div class="package-content">
+                    <h3>Pahalgam Trip</h3>
+                    <p>3 Days / 2 Nights | Price: ₹9,000/person</p>
+                    <button>Book Now</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="tour-card">
-      <h3>Gulmarg 2 Days</h3>
-      <p>Skiing, Gondola ride, Snow activities. Price: ₹6,500/person</p>
-    </div>
-    <div class="tour-card">
-      <h3>Pahalgam 2 Days</h3>
-      <p>Betaab Valley, Aru Valley, Scenic views. Price: ₹6,000/person</p>
-    </div>
-    <div class="tour-card">
-      <h3>Sonamarg 1 Day</h3>
-      <p>Thajiwas Glacier, River views. Price: ₹3,500/person</p>
-    </div>
-  </div>
 </section>
 
+<!-- Hotels -->
 <section id="hotels">
-  <h2>Hotels & Stay</h2>
-  <div class="grid">
-    <div class="hotel-card">
-      <h3>Hotel Heevan, Srinagar</h3>
-      <p>Luxury stay with Dal Lake view. ₹4,000/night</p>
+    <div class="container">
+        <h2>Hotels & Stays</h2>
+        <div class="hotels">
+            <div class="hotel">
+                <img src="https://source.unsplash.com/400x300/?hotel" alt="Hotel">
+                <div class="hotel-content">
+                    <h3>Hotel Grand Kashmir</h3>
+                    <p>Luxury rooms with lake view | Price: ₹4,000/night</p>
+                </div>
+            </div>
+            <div class="hotel">
+                <img src="https://source.unsplash.com/400x300/?resort" alt="Hotel">
+                <div class="hotel-content">
+                    <h3>Snow View Resort</h3>
+                    <p>Comfortable stay with breakfast | Price: ₹3,500/night</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="hotel-card">
-      <h3>Hotel Pine, Gulmarg</h3>
-      <p>Cozy stay near Gondola. ₹3,500/night</p>
-    </div>
-    <div class="hotel-card">
-      <h3>Hotel Pine, Pahalgam</h3>
-      <p>Comfortable stay in valley. ₹3,500/night</p>
-    </div>
-  </div>
 </section>
 
+<!-- Gallery -->
+<section id="gallery">
+    <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://source.unsplash.com/400x300/?dal-lake" alt="Dal Lake">
+            <img src="https://source.unsplash.com/400x300/?gulmarg" alt="Gulmarg">
+            <img src="https://source.unsplash.com/400x300/?pahalgam" alt="Pahalgam">
+            <img src="https://source.unsplash.com/400x300/?sonamarg" alt="Sonamarg">
+        </div>
+    </div>
+</section>
+
+<!-- Taxi Booking -->
 <section id="taxi">
-  <h2>Taxi & Transportation</h2>
-  <div class="grid">
-    <div class="taxi-card">
-      <h3>Airport Pickup</h3>
-      <p>₹1,000 from Srinagar Airport to city center.</p>
+    <div class="container">
+        <h2>Taxi Booking</h2>
+        <form class="taxi-form">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="date" name="date" required>
+            <input type="text" name="pickup" placeholder="Pickup Location" required>
+            <input type="text" name="drop" placeholder="Drop Location" required>
+            <select name="vehicle" required>
+                <option value="">Select Vehicle</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="tempo-traveller">Tempo Traveller</option>
+            </select>
+            <button type="submit" class="submit-btn">Book Taxi</button>
+        </form>
     </div>
-    <div class="taxi-card">
-      <h3>Local Sightseeing</h3>
-      <p>₹2,500 for full day sightseeing.</p>
-    </div>
-    <div class="taxi-card">
-      <h3>Private Car Hire</h3>
-      <p>₹3,500/day with driver.</p>
-    </div>
-  </div>
 </section>
 
+<!-- Reviews -->
 <section id="reviews">
-  <h2>Customer Reviews</h2>
-  <div class="grid">
-    <div class="review-card">
-      <p>"Amazing experience in Kashmir! Travel Kashmir Now made everything easy."</p>
-      <strong>- Aisha R.</strong>
+    <div class="container">
+        <h2>Customer Reviews</h2>
+        <div class="reviews">
+            <div class="review-slide active">
+                <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Customer">
+                <h4>Rohit Sharma</h4>
+                <p>Amazing experience! The tour was well organized and hotels were great.</p>
+            </div>
+            <div class="review-slide">
+                <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Customer">
+                <h4>Anjali Verma</h4>
+                <p>Best travel agency for Kashmir! Loved the taxi service and package options.</p>
+            </div>
+            <div class="review-slide">
+                <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Customer">
+                <h4>Arjun Singh</h4>
+                <p>Highly recommend Travel Kashmir Now. Professional and friendly staff.</p>
+            </div>
+        </div>
     </div>
-    <div class="review-card">
-      <p>"Best tour package! Friendly staff and comfortable stay."</p>
-      <strong>- Rahul K.</strong>
-    </div>
-    <div class="review-card">
-      <p>"Highly recommend for anyone visiting Srinagar and Gulmarg."</p>
-      <strong>- Sana P.</strong>
-    </div>
-  </div>
 </section>
 
+<!-- Contact -->
 <section id="contact">
-  <h2>Contact Us</h2>
-  <p>Phone: +91 8899434467 | Email: travelkashmirnow@gmail.com</p>
-  <p>Address: Srinagar, Jammu & Kashmir, India</p>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234723.892!2d74.7190!3d34.0837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e1972d6db489c9%3A0x4f0d5f0aab5d75b0!2sSrinagar%2C+Jammu+and+Kashmir%2C+India!5e0!3m2!1sen!2sin!4v1695110653647!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
-  
-  <h3>Send Us a Message</h3>
-  <form>
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Call/WhatsApp: 8899434467 | Email: info@travelkashmirnow.com</p>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <div style="margin-top:20px;">
+            <iframe src="https://www.google.com/maps?q=Srinagar,Kashmir&output=embed" width="100%" height="300" style="border:0;"></iframe>
+        </div>
+    </div>
 </section>
 
+<!-- Footer -->
 <footer>
-  <p>© 2026 Travel Kashmir Now. All rights reserved.</p>
-  <p>Follow us: <a href="#" style="color:#ff6b6b;">Facebook</a> | <a href="#" style="color:#ff6b6b;">Instagram</a> | <a href="#" style="color:#ff6b6b;">WhatsApp</a></p>
+    <p>&copy; 2026 Travel Kashmir Now | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>Follow us: 
+        <a href="#"><i class="fab fa-facebook"></i></a> 
+        <a href="#"><i class="fab fa-instagram"></i></a> 
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </p>
 </footer>
+
+<script>
+// Reviews Slider
+let slideIndex = 0;
+const slides = document.querySelectorAll('.review-slide');
+function showSlides() {
+    slides.forEach(s => s.classList.remove('active'));
+    slideIndex++;
+    if(slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex-1].classList.add('active');
+    setTimeout(showSlides, 4000);
+}
+showSlides();
+</script>
 
 </body>
 </html>
