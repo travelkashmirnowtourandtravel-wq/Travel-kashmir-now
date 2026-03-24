@@ -14,7 +14,7 @@
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Travel Kashmir Now | Best Tours in Kashmir">
   <meta property="og:description" content="Book Kashmir tour packages, hotels, taxis with Travel Kashmir Now. Best prices guaranteed.">
-  <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAYAAAA0bU1vAA... (Base64 of logo)">
+  <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAYAAAA0bU1vAA...">
   <meta property="og:url" content="https://travelkashmirnowtourandtravel-wq.github.io/Travel-Kashmir-Now/">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -27,15 +27,17 @@
   <style>
     body { font-family: 'Roboto', sans-serif; margin:0; padding:0; line-height:1.6; background:#f9f9f9; }
     header { background:#004080; color:white; padding:20px 0; text-align:center; }
+    header h1 { font-size:2.8em; margin:0; }
+    header p { font-size:1.2em; margin-top:5px; color:white; }
     nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
-    section { padding:40px 20px; max-width:1200px; margin:auto; }
-    h2 { color:#004080; }
-    .tour, .hotel, .cab { border:1px solid #ddd; padding:15px; margin-bottom:20px; border-radius:8px; background:white; }
+    section { padding:50px 20px; max-width:1200px; margin:auto; }
+    h2 { color:#004080; font-size:2em; margin-bottom:20px; }
+    .tour, .hotel, .cab { border:1px solid #ddd; padding:20px; margin-bottom:20px; border-radius:8px; background:white; }
     footer { background:#004080; color:white; text-align:center; padding:20px; margin-top:40px; }
     .review-form input, .review-form textarea { width:100%; padding:10px; margin:5px 0; border-radius:5px; border:1px solid #ccc; }
     .review-form button { background:#ff8000; color:white; border:none; padding:10px 20px; cursor:pointer; border-radius:5px; }
     .whatsapp-btn { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:30px; text-decoration:none; box-shadow:0 2px 5px rgba(0,0,0,0.3); }
-    img { max-width:100%; border-radius:8px; margin:10px 0; }
+    img { max-width:100%; border-radius:8px; margin:15px 0; }
   </style>
 
   <!-- JSON-LD Structured Data -->
@@ -64,6 +66,7 @@
 
 <header>
   <h1>Travel Kashmir Now</h1>
+  <p>Your Best Travel Partner in Kashmir</p>
   <nav>
     <a href="#about">About</a>
     <a href="#tours">Tours</a>
@@ -80,7 +83,7 @@
 </section>
 
 <section id="tours">
-  <h2>Tour Packages</h2>
+  <h2>Our Tour Packages</h2>
   <div class="tour">
     <h3>Srinagar Sightseeing</h3>
     <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQA..." alt="Srinagar Tour">
@@ -146,16 +149,15 @@
   <p>&copy; 2026 Travel Kashmir Now. All rights reserved.</p>
 </footer>
 
-<!-- WhatsApp Floating Button -->
 <a href="https://wa.me/918899434467" class="whatsapp-btn" target="_blank">💬</a>
 
 <script>
 function submitReview(){
-  const name = document.getElementById('name').value.trim();
-  const message = document.getElementById('message').value.trim();
+  const name=document.getElementById('name').value.trim();
+  const message=document.getElementById('message').value.trim();
   if(name && message){
-    const reviewList = document.getElementById('review-list');
-    const reviewDiv = document.createElement('div');
+    const reviewList=document.getElementById('review-list');
+    const reviewDiv=document.createElement('div');
     reviewDiv.style.border='1px solid #ddd';
     reviewDiv.style.padding='10px';
     reviewDiv.style.marginBottom='10px';
