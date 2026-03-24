@@ -4,19 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Travel Kashmir Now – Explore the Paradise on Earth</title>
-<meta name="description" content="Travel Kashmir Now offers tours, hotel bookings, cab services, and travel packages in Kashmir.">
+<meta name="description" content="Travel Kashmir Now offers luxury tours, hotel bookings, cab services, and travel packages in Kashmir.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-body{margin:0;font-family:'Poppins',sans-serif;background:#f9f9f9;color:#333;}
+body{margin:0;font-family:'Poppins',sans-serif;background:#f4f4f9;color:#333;}
 header{background:#0077b6;color:#fff;padding:20px;text-align:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,0.2);}
 header img{width:160px;}
 nav a{color:#fff;margin:0 15px;text-decoration:none;font-weight:600;}
 nav a:hover{color:#ffd700;}
 .hero{background:url('https://i.ibb.co/7SxQ6RJ/kashmir-hero.jpg') no-repeat center/cover;height:500px;display:flex;align-items:center;justify-content:center;color:#fff;text-shadow:2px 2px 8px #000;font-size:2.5em;font-weight:700;text-align:center;padding:0 20px;}
 section{padding:60px 20px;max-width:1200px;margin:auto;}
-h2{text-align:center;color:#ff4d6d;font-size:2em;margin-bottom:20px;}
+h2{font-size:2em;margin-bottom:20px;text-align:center;}
+#about h2{color:#ff4d6d;}
+#tours h2{color:#00b894;}
+#hotels h2{color:#fdcb6e;}
+#gallery h2{color:#6c5ce7;}
+#reviews h2{color:#d63031;}
+#contact h2{color:#0984e3;}
 .tours,.reviews,.gallery{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
-.tour,.review,.gallery-item{border:1px solid #ddd;padding:20px;border-radius:10px;flex:1 1 300px;box-shadow:0 0 15px rgba(0,0,0,0.1);background:#fff;}
+.tour,.review,.gallery-item{border:1px solid #ddd;padding:20px;border-radius:10px;flex:1 1 300px;box-shadow:0 0 15px rgba(0,0,0,0.1);background:#fff;transition:0.3s;}
 .tour:hover,.review:hover,.gallery-item:hover{transform:translateY(-5px);box-shadow:0 0 20px rgba(0,0,0,0.2);}
 .review-stars{color:#ffd700;font-size:1.2em;margin-bottom:5px;}
 footer{background:#023e8a;color:#fff;text-align:center;padding:20px;margin-top:40px;}
@@ -51,21 +57,22 @@ button.submit-btn:hover{background:#005f86;}
 
 <section id="about">
 <h2>About Us</h2>
-<p>Travel Kashmir Now is your trusted travel partner in Kashmir. We offer well-planned tours, comfortable hotels, reliable cab services, and customized travel packages. Explore Srinagar, Gulmarg, Pahalgam, and other amazing destinations with us. Your trip will be safe, memorable, and luxurious.</p>
+<p>Travel Kashmir Now is your trusted travel partner in Kashmir. We offer luxury and affordable tours, comfortable hotels, reliable cab services, and fully customizable travel packages. Explore Srinagar, Gulmarg, Pahalgam, and other breathtaking destinations. Your trip will be safe, memorable, and filled with beauty and adventure.</p>
+<p><strong>Address:</strong> Srinagar, Jammu and Kashmir 190001</p>
 </section>
 
 <section id="tours">
 <h2>Our Popular Tours & Packages</h2>
 <div class="tours">
 <div class="tour"><h3>Srinagar Local Tour</h3><p>Visit Dal Lake, Mughal Gardens, Shankaracharya Temple, and local handicraft markets.</p></div>
-<div class="tour"><h3>Gulmarg Adventure Tour</h3><p>Enjoy skiing, snowboarding, and scenic Gulmarg Gondola rides.</p></div>
+<div class="tour"><h3>Gulmarg Adventure Tour</h3><p>Enjoy skiing, snowboarding, and the scenic Gulmarg Gondola ride.</p></div>
 <div class="tour"><h3>Pahalgam & Betaab Valley</h3><p>Experience lush meadows, river rafting, and breathtaking valley landscapes.</p></div>
 </div>
 </section>
 
 <section id="hotels">
 <h2>Hotels & Transportation</h2>
-<p>Comfortable hotels across Kashmir with 24/7 service. Reliable cab services cover all major tourist spots.</p>
+<p>Comfortable, hand-picked hotels across Kashmir with 24/7 customer service. Reliable cab services cover all major tourist spots ensuring safe and timely travel.</p>
 </section>
 
 <section id="gallery">
@@ -101,6 +108,7 @@ button.submit-btn:hover{background:#005f86;}
 <h2>Contact Us</h2>
 <p>Email: <a href="mailto:travelkashmir11@gmail.com">travelkashmir11@gmail.com</a></p>
 <p>Phone: <a href="tel:+918899434467">+91 88994 34467</a></p>
+<p><strong>Address:</strong> Srinagar, Jammu and Kashmir 190001</p>
 </section>
 
 <div class="contact-buttons">
@@ -127,7 +135,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Load reviews real-time
+// Load reviews live
 function loadReviews() {
   const container = document.getElementById('reviews-container');
   db.collection("reviews").orderBy("timestamp","desc")
@@ -159,7 +167,7 @@ document.getElementById('review-form').addEventListener('submit', e=>{
   }).then(()=>{e.target.reset();});
 });
 
-// Gallery lightbox
+// Lightbox
 const lightbox = document.getElementById('lightbox');
 document.querySelectorAll('.gallery img').forEach(img=>{
   img.onclick = ()=>{lightbox.style.display='flex'; lightbox.querySelector('img').src = img.src;}
