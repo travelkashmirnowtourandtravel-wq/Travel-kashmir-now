@@ -15,9 +15,9 @@
 <!-- Supabase JS -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const supabaseUrl = 'https://neyqjvmnepmalhogtipj.supabase.co';
-  const supabaseKey = 'sb_secret_aY-7c1HJfVXqOP_7I7w-dw_uvhH-bYF';
-  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabaseUrl = 'https://neyqjvmnepmalhogtipj.supabase.co';
+const supabaseKey = 'sb_secret_aY-7c1HJfVXqOP_7I7w-dw_uvhH-bYF';
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 </script>
 
 <style>
@@ -134,20 +134,51 @@ form button{padding:0.7rem;background:#1e3d59;color:white;border:none;border-rad
 </footer>
 
 <script>
-// Preloaded tours and reviews are already displayed above
-// But we can still enable dynamic Supabase integration if needed
+// Dynamic Tours: overwrite preloaded content
+async function loadTours() {
+    const { data: tours, error } = await supabase.from('tours').select('*');
+    if(!error && tours.length > 0){
+        const container = document.querySelector('.tours');
+        container.innerHTML = '';
+        tours.forEach(tour=>{
+            const card = document.createElement('div');
+            card.className = 'tour-card';
+            card.innerHTML = `<img src="${tour.image}" alt="${tour.name}"><h3>${tour.name}</h3><p>${tour.description}</p>`;
+            container.appendChild(card);
+        });
+    }
+}
 
-// Submit Review to Supabase
+// Dynamic Reviews: overwrite preloaded content
+async function loadReviews() {
+    const { data: reviews, error } = await supabase.from('reviews').select('*').order('id',{ascending:false});
+    if(!error && reviews.length>0){
+        const container = document.querySelector('.reviews');
+        container.innerHTML = '';
+        reviews.forEach(r=>{
+            const card = document.createElement('div');
+            card.className='review-card';
+            card.innerHTML=`<h4>${r.name}</h4><p>${r.review}</p>`;
+            container.appendChild(card);
+        });
+    }
+}
+
+// Submit Review
 document.getElementById('reviewForm').addEventListener('submit', async e=>{
     e.preventDefault();
     const name=document.getElementById('reviewerName').value;
     const review=document.getElementById('reviewText').value;
     await supabase.from('reviews').insert([{name,review}]);
     document.getElementById('reviewForm').reset();
-    alert("Thank you! Your review has been submitted.");
+    loadReviews(); // reload dynamically
 });
 
-// Embedded Sitemap (inline for search engines)
+// Initial load
+loadTours();
+loadReviews();
+
+// Sitemap XML (inline for search engines)
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://yourdomain.com/</loc><priority>1.0</priority></url>
