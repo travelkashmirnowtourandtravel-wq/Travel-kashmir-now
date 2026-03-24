@@ -3,127 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Kashmir Now</title>
+
+<title>Travel Kashmir Now | Book Kashmir Tours</title>
+
+<meta name="description" content="Best Kashmir tour packages, taxi, hotel booking in Srinagar. Pay online & book instantly.">
 
 <style>
-body {margin:0;font-family: 'Segoe UI', sans-serif;background:#f5f5f5;}
-
-nav {
-position:sticky;top:0;background:#0b5d7a;color:white;
-display:flex;justify-content:space-between;padding:15px;
-}
-nav a {color:white;margin:0 10px;text-decoration:none;}
-
+body {font-family: Arial; margin:0;}
+header {background:#0a3d62; color:white; padding:20px; text-align:center;}
+nav {background:#3c6382; padding:10px; text-align:center;}
+nav a {color:white; margin:10px; text-decoration:none;}
 .hero {
-background:url('https://images.unsplash.com/photo-1593691509543-c55fb32c8c5b') center/cover;
-height:90vh;color:white;display:flex;flex-direction:column;
-justify-content:center;align-items:center;text-align:center;
+background:url('https://images.unsplash.com/photo-1597045566677-8cf032ed6634') no-repeat center/cover;
+color:white;
+padding:120px 20px;
+text-align:center;
 }
-
-.booking-box {
-background:white;padding:20px;border-radius:10px;margin-top:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
-
-input, textarea {
-padding:10px;margin:5px;border:1px solid #ccc;border-radius:5px;width:90%;
-}
-
-.btn {
-background:#ff9800;color:white;border:none;padding:10px 20px;
-border-radius:5px;cursor:pointer;
-}
-
-section {padding:40px 20px;text-align:center;}
-
-.cards {
-display:grid;
-grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-gap:20px;
-}
-
-.card {
-background:white;padding:15px;border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-.price {color:green;font-weight:bold;}
-
-.whatsapp {
-position:fixed;bottom:20px;right:20px;background:#25D366;
-color:white;padding:15px;border-radius:50%;
-}
+.btn {background:#e58e26; padding:12px 25px; color:white; border:none; border-radius:5px;}
+section {padding:40px;}
+.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+.box {background:#f4f4f4; padding:20px; border-radius:10px;}
+form input, form select, form textarea {width:100%; padding:10px; margin:10px 0;}
+.gallery img {width:100%; border-radius:10px;}
+footer {background:#0a3d62; color:white; text-align:center; padding:20px;}
+.floating {position:fixed; bottom:20px; right:20px;}
 </style>
-</head>
 
+</head>
 <body>
 
+<header>
+<h1>Travel Kashmir Now</h1>
+<p>Your Trusted Travel Partner in Srinagar</p>
+</header>
+
 <nav>
-<h3>Travel Kashmir Now</h3>
-<div>
-<a href="#">Home</a>
-<a href="#">Packages</a>
-<a href="#">Contact</a>
-</div>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#packages">Packages</a>
+<a href="#gallery">Gallery</a>
+<a href="#booking">Booking</a>
+<a href="#payment">Payment</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <div class="hero">
-<h1>Book Your Kashmir Trip</h1>
-<p>Best Deals | Hotels | Cab Service</p>
-
-<div class="booking-box">
-<input type="text" id="name" placeholder="Your Name">
-<input type="tel" id="phone" placeholder="Phone Number">
-<input type="text" id="package" placeholder="Package Name">
-<br>
-<button class="btn" onclick="sendWhatsApp()">Book Now</button>
-</div>
+<h2>Explore Paradise Kashmir</h2>
+<p>Book Tours, Hotels & Taxi Services</p>
+<a href="#booking" class="btn">Book Now</a>
 </div>
 
-<section>
+<section id="about">
+<h2>About Us</h2>
+<p>We provide professional travel services in Srinagar including taxi, hotels, and tour packages with best pricing and customer satisfaction.</p>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="box"><h3>Hotel Booking</h3></div>
+<div class="box"><h3>Taxi Service</h3></div>
+<div class="box"><h3>Tour Packages</h3></div>
+<div class="box"><h3>Airport Pickup</h3></div>
+</div>
+</section>
+
+<section id="packages">
 <h2>Tour Packages</h2>
-<div class="cards">
-
-<div class="card">
-<h3>Srinagar Tour</h3>
-<p>2 Nights / 3 Days</p>
-<p class="price">₹7,999</p>
-</div>
-
-<div class="card">
-<h3>Gulmarg Tour</h3>
-<p>3 Nights / 4 Days</p>
-<p class="price">₹10,999</p>
-</div>
-
-<div class="card">
-<h3>Pahalgam Tour</h3>
-<p>3 Nights / 4 Days</p>
-<p class="price">₹9,999</p>
-</div>
-
+<div class="grid">
+<div class="box"><h3>3 Days Srinagar</h3></div>
+<div class="box"><h3>5 Days Kashmir</h3></div>
+<div class="box"><h3>7 Days Full Tour</h3></div>
 </div>
 </section>
 
-<section>
-<h2>Contact</h2>
-<p>📞 8899434467</p>
-<p>📍 Srinagar, Jammu & Kashmir</p>
+<section id="gallery">
+<h2>Gallery</h2>
+<div class="grid gallery">
+<img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766">
+<img src="https://images.unsplash.com/photo-1597045566677-8cf032ed6634">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+</div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/918899434467">💬</a>
+<section id="booking">
+<h2>Book Your Trip</h2>
 
-<script>
-function sendWhatsApp(){
-let name = document.getElementById("name").value;
-let phone = document.getElementById("phone").value;
-let package = document.getElementById("package").value;
+<form action="https://formsubmit.co/travelkashmirnow@gmail.com" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
 
-let message = "New Booking:%0AName: " + name + "%0APhone: " + phone + "%0APackage: " + package;
+<select name="package">
+<option>Select Package</option>
+<option>3 Days Srinagar</option>
+<option>5 Days Kashmir</option>
+<option>7 Days Full Tour</option>
+</select>
 
-window.open("https://wa.me/918899434467?text=" + message);
-}
-</script>
+<input type="date" name="date">
+<textarea name="message" placeholder="Your Message"></textarea>
+
+<input type="hidden" name="_captcha" value="false">
+
+<button class="btn" type="submit">Submit Booking</button>
+</form>
+
+</section>
+
+<section id="payment">
+<h2>Pay Advance (UPI)</h2>
+
+<p>Scan & Pay via UPI</p>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=8899434467@upi&pn=TravelKashmirNow">
+
+<p>UPI ID: <b>8899434467@upi</b></p>
+
+</section>
+
+<section id="reviews">
+<h2>Google Reviews</h2>
+
+<p>Check our customer reviews on Google:</p>
+
+<iframe 
+src="https://www.google.com/maps?q=Srinagar&output=embed"
+width="100%" height="300">
+</iframe>
+
+<p>⭐ Please search "Travel Kashmir Now" on Google and leave your review</p>
+
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p><b>Phone:</b> 8899434467</p>
+<p><b>Email:</b> travelkashmirnow@gmail.com</p>
+
+<a href="https://wa.me/918899434467" class="btn">WhatsApp Us</a>
+</section>
+
+<footer>
+<p>© 2026 Travel Kashmir Now</p>
+</footer>
+
+<div class="floating">
+<a href="tel:8899434467" class="btn">Call Now</a>
+</div>
 
 </body>
 </html>
