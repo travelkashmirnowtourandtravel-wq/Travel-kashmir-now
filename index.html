@@ -8,7 +8,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 body{margin:0;font-family:'Poppins',sans-serif;background:#f4f4f9;color:#333;}
-header{background:#0077b6;color:#fff;padding:20px;text-align:center;position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 5px rgba(0,0,0,0.2);}
+header{background:#0077b6;color:#fff;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,0.2);}
 header img{width:150px;}
 .nav-links a{color:#fff;margin:0 10px;font-weight:700;text-decoration:none;}
 .nav-links a:hover{color:#ffd700;}
@@ -17,7 +17,7 @@ header img{width:150px;}
 .hero{background:url('https://via.placeholder.com/1200x400?text=Kashmir+Paradise') no-repeat center/cover;height:400px;display:flex;align-items:center;justify-content:center;color:#fff;text-shadow:2px 2px 8px #000;font-size:2.5em;font-weight:700;text-align:center;}
 section{padding:50px 20px;max-width:1200px;margin:auto;}
 h2{font-size:2em;margin-bottom:20px;text-align:center;font-weight:700;}
-h2 span{color:#ff4d6d;} /* heading color */
+h2 span{color:#ff4d6d;}
 .tours,.reviews,.gallery{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
 .tour,.review,.gallery-item{border-radius:10px;padding:20px;background:#fff;flex:1 1 300px;box-shadow:0 0 15px rgba(0,0,0,0.1);transition:0.3s;}
 .tour:hover,.review:hover,.gallery-item:hover{transform:translateY(-5px);box-shadow:0 0 20px rgba(0,0,0,0.2);}
@@ -116,42 +116,35 @@ footer{background:#023e8a;color:#fff;text-align:center;padding:20px;margin-top:4
 
 <footer>© 2026 Travel Kashmir Now</footer>
 
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <script>
-// 🔹 Replace with your Firebase config
-const firebaseConfig = {
-  /* FIREBASE CONFIG GOES HERE */
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+// Local storage based review system (no Firebase)
+const reviewsContainer = document.getElementById('reviews-container');
+const reviewForm = document.getElementById('review-form');
 
-// Load reviews live
-db.collection("reviews").orderBy("timestamp","desc").onSnapshot(snapshot=>{
-  const container = document.getElementById('reviews-container');
-  container.innerHTML='';
-  snapshot.forEach(doc=>{
-    const d = doc.data();
-    const stars = '⭐'.repeat(d.rating);
+function loadReviews(){
+  let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+  reviewsContainer.innerHTML = '';
+  reviews.forEach(r=>{
     const div = document.createElement('div');
     div.className='review';
-    div.innerHTML=`<h3>${d.name}</h3><div class="review-stars">${stars}</div><p>${d.comment}</p>`;
-    container.appendChild(div);
+    div.innerHTML=`<h3>${r.name}</h3><div class="review-stars">${'⭐'.repeat(r.rating)}</div><p>${r.comment}</p>`;
+    reviewsContainer.appendChild(div);
   });
+}
+
+reviewForm.addEventListener('submit', e=>{
+  e.preventDefault();
+  let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+  const name = document.getElementById('reviewer-name').value;
+  const rating = parseInt(document.getElementById('reviewer-rating').value);
+  const comment = document.getElementById('reviewer-comment').value;
+  reviews.unshift({name,rating,comment});
+  localStorage.setItem('reviews', JSON.stringify(reviews));
+  reviewForm.reset();
+  loadReviews();
 });
 
-// Submit review
-document.getElementById('review-form').addEventListener('submit', e=>{
-  e.preventDefault();
-  const name=document.getElementById('reviewer-name').value;
-  const rating=parseInt(document.getElementById('reviewer-rating').value);
-  const comment=document.getElementById('reviewer-comment').value;
-  db.collection("reviews").add({
-    name,rating,comment,
-    timestamp:firebase.firestore.FieldValue.serverTimestamp()
-  }).then(()=>{e.target.reset();});
-});
+loadReviews();
 
 // Gallery lightbox
 const lightbox=document.getElementById('lightbox');
