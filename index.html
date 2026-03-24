@@ -16,7 +16,7 @@ nav a{color:#fff;margin:0 15px;text-decoration:none;font-weight:600;transition:0
 nav a:hover{color:#ffd700;}
 .hero{background:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABALDA4MChAODQ4SERATFhEYGBoZGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoZ/2wBDARESEhgVGBkaGhkaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoZ/wAARCAAZABkDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABwME/8QAIBAAAgICAgIDAAAAAAAAAAAAAQIDBAURACExBhIUI//EABUBAQEAAAAAAAAAAAAAAAAAAAID/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARIf/aAAwDAQACEQMRAD8A0YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//Z') no-repeat center/cover;height:500px;display:flex;align-items:center;justify-content:center;color:#fff;text-shadow:2px 2px 8px #000;font-size:2.5em;font-weight:700;text-align:center;padding:0 20px;}
 section{padding:60px 20px;max-width:1200px;margin:auto;}
-h2{text-align:center;color:#0077b6;font-size:2em;margin-bottom:20px;}
+h2{text-align:center;color:#ff4d6d;font-size:2em;margin-bottom:20px;} /* Changed heading color */
 .tours,.reviews,.gallery{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
 .tour,.review,.gallery-item{border:1px solid #ddd;padding:20px;border-radius:10px;flex:1 1 300px;box-shadow:0 0 15px rgba(0,0,0,0.1);background:#fff;transition:0.3s;}
 .tour:hover,.review:hover,.gallery-item:hover{transform:translateY(-5px);box-shadow:0 0 20px rgba(0,0,0,0.2);}
@@ -38,7 +38,7 @@ button.submit-btn:hover{background:#005f86;}
 <body>
 
 <header>
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAADL9J3QAAAACXBIWXMAAAsTAAALEwEAmpwYAAABHUlEQVR4nO3SQQ2AMAwF0Lz/za+3cWYkMqYj9wy99Pf2EAABgAAIAAGAAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAA//9k=" alt="Logo">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAADL9J3QAAAACXBIWXMAAAsTAAALEwEAmpwYAAABHUlEQVR4nO3SQQ2AMAwF0Lz/za+3cWYkMqYj9wy99Pf2EAABgAAIAAGAAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAAYAAEACAAAgAAQAAIAABgAAQAAgAA//9k=" alt="Logo">
 <nav>
 <a href="#about">About</a>
 <a href="#tours">Tours</a>
@@ -115,7 +115,7 @@ button.submit-btn:hover{background:#005f86;}
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <script>
-// 🔹 Replace with your Firebase config
+// 🔹 Add your Firebase config here
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "PROJECT_ID.firebaseapp.com",
@@ -127,36 +127,37 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Load reviews
+// Load and show reviews immediately
 function loadReviews(){
- const container = document.getElementById('reviews-container');
- container.innerHTML = '';
- db.collection("reviews").orderBy("timestamp","desc").get().then(snap=>{
-  snap.forEach(doc=>{
-   const d = doc.data();
-   const stars = '⭐'.repeat(d.rating);
-   container.innerHTML += `<div class="review"><h3>${d.name}</h3><div class="review-stars">${stars}</div><p>${d.comment}</p></div>`;
+  const container = document.getElementById('reviews-container');
+  container.innerHTML = '';
+  db.collection("reviews").orderBy("timestamp","desc").onSnapshot(snapshot=>{
+    container.innerHTML = '';
+    snapshot.forEach(doc=>{
+      const d = doc.data();
+      const stars = '⭐'.repeat(d.rating);
+      container.innerHTML += `<div class="review"><h3>${d.name}</h3><div class="review-stars">${stars}</div><p>${d.comment}</p></div>`;
+    });
   });
- });
 }
 loadReviews();
 
 // Submit review
 document.getElementById('review-form').addEventListener('submit',e=>{
- e.preventDefault();
- const name = document.getElementById('reviewer-name').value;
- const rating = parseInt(document.getElementById('reviewer-rating').value);
- const comment = document.getElementById('reviewer-comment').value;
- db.collection("reviews").add({name,rating,comment,timestamp:firebase.firestore.FieldValue.serverTimestamp()})
- .then(()=>{loadReviews();e.target.reset();});
+  e.preventDefault();
+  const name = document.getElementById('reviewer-name').value;
+  const rating = parseInt(document.getElementById('reviewer-rating').value);
+  const comment = document.getElementById('reviewer-comment').value;
+  db.collection("reviews").add({name,rating,comment,timestamp:firebase.firestore.FieldValue.serverTimestamp()})
+    .then(()=>{loadReviews();e.target.reset();});
 });
 
-// Lightbox
-const lightbox=document.getElementById('lightbox');
+// Gallery Lightbox
+const lightbox = document.getElementById('lightbox');
 document.querySelectorAll('.gallery img').forEach(img=>{
- img.onclick=()=>{lightbox.style.display='flex';lightbox.querySelector('img').src=img.src;}
+  img.onclick = ()=>{lightbox.style.display='flex';lightbox.querySelector('img').src=img.src;}
 });
-lightbox.onclick=()=>{lightbox.style.display='none';};
+lightbox.onclick = ()=>{lightbox.style.display='none';};
 </script>
 </body>
 </html>
