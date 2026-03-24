@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Travel Kashmir Now – Explore the Beauty of Kashmir</title>
-<meta name="description" content="Travel Kashmir Now offers the best tours, cab services, hotel booking, and travel packages in Kashmir. Call or WhatsApp us now!">
-<meta name="keywords" content="Kashmir tours, Kashmir travel, Srinagar taxi, Kashmir cab services, Travel Kashmir Now">
+<meta name="description" content="Travel Kashmir Now offers premium tours, cab services, hotel booking, and travel packages in Kashmir. Discover Dal Lake, Gulmarg, Pahalgam and more with us.">
+<meta name="keywords" content="Kashmir tours, Kashmir travel, Srinagar taxi, Kashmir cab services, Travel Kashmir Now, Pahalgam, Gulmarg">
 <meta name="robots" content="index, follow">
-<link rel="icon" href="logo.png" type="image/png">
+<link rel="icon" href="https://i.imgur.com/6rOaqk2.png" type="image/png">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -22,24 +22,27 @@ const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 <style>
 body {margin:0;font-family:'Roboto',sans-serif;background:#f8f9fa;color:#333;}
-header {background:url('kashmir-banner.jpg') no-repeat center/cover;height:80vh;display:flex;align-items:center;justify-content:center;color:white;text-align:center;position:relative;}
+header {background:url('https://images.unsplash.com/photo-1555421689-2b8dcd847ab7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a2FzaG1pcnxlbnwwfHwwfHw%3D&ixlib=rb-4.0.3&q=80&w=1200') no-repeat center/cover;height:80vh;display:flex;align-items:center;justify-content:center;color:white;text-align:center;position:relative;}
 header::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);}
 header h1{font-size:3rem;z-index:1;}
-nav{background:#1e3d59;display:flex;justify-content:space-around;padding:1rem;}
+nav{background:#1e3d59;display:flex;justify-content:space-around;padding:1rem;position:sticky;top:0;z-index:10;}
 nav a{color:white;text-decoration:none;font-weight:600;}
 section{padding:2rem 1rem;max-width:1200px;margin:auto;}
-h2{color:#1e3d59;margin-bottom:1rem;}
-.tours,.reviews{display:flex;flex-wrap:wrap;gap:1rem;}
-.tour-card,.review-card{background:white;box-shadow:0 0 10px rgba(0,0,0,0.1);flex:1 1 calc(33% - 1rem);padding:1rem;border-radius:10px;}
-.tour-card img,.review-card img{width:100%;border-radius:10px;}
-footer{background:#1e3d59;color:white;text-align:center;padding:1rem;}
-.call-whatsapp{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:10px;}
+h2{color:#1e3d59;margin-bottom:1rem;text-align:center;}
+.tours,.reviews{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
+.tour-card,.review-card{background:white;box-shadow:0 0 10px rgba(0,0,0,0.1);flex:1 1 calc(30% - 1rem);padding:1rem;border-radius:10px;transition:transform 0.3s;}
+.tour-card:hover,.review-card:hover{transform:translateY(-5px);}
+.tour-card img,.review-card img{width:100%;border-radius:10px;height:200px;object-fit:cover;}
+.stars{color:#FFD700;margin:5px 0;}
+footer{background:#1e3d59;color:white;text-align:center;padding:1rem;margin-top:2rem;}
+.call-whatsapp{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:10px;z-index:20;}
 .call-whatsapp a{text-decoration:none;color:white;padding:0.8rem 1rem;border-radius:50px;font-weight:bold;display:flex;align-items:center;gap:0.5rem;}
 .call-btn{background:#28a745;}
 .whatsapp-btn{background:#25D366;}
 form{margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;}
 form input,form textarea{padding:0.5rem;border-radius:5px;border:1px solid #ccc;width:100%;}
 form button{padding:0.7rem;background:#1e3d59;color:white;border:none;border-radius:5px;cursor:pointer;}
+@media(max-width:1024px){.tour-card,.review-card{flex:1 1 45%;}}
 @media(max-width:768px){.tour-card,.review-card{flex:1 1 100%;}}
 </style>
 </head>
@@ -58,7 +61,9 @@ form button{padding:0.7rem;background:#1e3d59;color:white;border:none;border-rad
 
 <section id="overview">
 <h2>About Travel Kashmir Now</h2>
-<p>We offer premium travel services in Kashmir including guided tours, cab services, hotel bookings, and exclusive travel packages. Explore Srinagar, Gulmarg, Pahalgam, and more with us.</p>
+<p style="max-width:900px;margin:auto;text-align:center;">
+Experience the best of Kashmir with our premium tours and services. From serene Shikara rides at Dal Lake, snow adventures in Gulmarg, to lush valleys in Pahalgam, we provide customized packages, reliable cab services, and unforgettable travel experiences. Our expert team ensures comfort, safety, and memorable journeys for every traveler.
+</p>
 </section>
 
 <section id="tours">
@@ -66,29 +71,34 @@ form button{padding:0.7rem;background:#1e3d59;color:white;border:none;border-rad
 <div class="tours">
 <!-- Preloaded tours -->
 <div class="tour-card">
-<img src="dal-lake.jpg" alt="Dal Lake Tour">
+<img src="https://images.unsplash.com/photo-1601655068712-0c362f678ab7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Dal Lake Tour">
 <h3>Dal Lake Tour</h3>
-<p>Enjoy a serene Shikara ride and sightseeing on the famous Dal Lake in Srinagar.</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Enjoy serene Shikara rides, houseboats, and sightseeing at the iconic Dal Lake in Srinagar. Ideal for photography and relaxation.</p>
 </div>
 <div class="tour-card">
-<img src="gulmarg.jpg" alt="Gulmarg Adventure">
+<img src="https://images.unsplash.com/photo-1600596541712-23b0b7a6ff3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Gulmarg Adventure">
 <h3>Gulmarg Adventure</h3>
-<p>Snow sports, scenic views, and trekking in the beautiful Gulmarg hills.</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Experience snow sports, cable car rides, and breathtaking landscapes in the famous Gulmarg hills. Perfect for adventure enthusiasts.</p>
 </div>
 <div class="tour-card">
-<img src="pahalgam.jpg" alt="Pahalgam Excursion">
+<img src="https://images.unsplash.com/photo-1562918052-b8c1b1c379c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pahalgam Excursion">
 <h3>Pahalgam Excursion</h3>
-<p>Explore lush valleys, rivers, and trekking trails in Pahalgam.</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Explore lush valleys, trekking trails, rivers, and natural beauty in Pahalgam. A perfect escape for nature lovers and photographers.</p>
 </div>
 <div class="tour-card">
-<img src="cab-service.jpg" alt="Srinagar Cab Service">
+<img src="https://images.unsplash.com/photo-1549887534-18c9fcdca34f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Srinagar Cab Service">
 <h3>Srinagar Cab Service</h3>
-<p>Reliable and comfortable taxi service across Srinagar and nearby destinations.</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Reliable and comfortable taxi service across Srinagar and nearby destinations. Book anytime for hassle-free travel.</p>
 </div>
 <div class="tour-card">
-<img src="kashmir-package.jpg" alt="Kashmir Packages">
+<img src="https://images.unsplash.com/photo-1578856280621-b9d8c1e3270b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Customized Packages">
 <h3>Customized Kashmir Packages</h3>
-<p>Multi-day tours covering Srinagar, Gulmarg, Pahalgam, and other scenic spots.</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Multi-day tours covering Srinagar, Gulmarg, Pahalgam, Sonamarg, and more. Fully customizable for groups, families, and solo travelers.</p>
 </div>
 </div>
 </section>
@@ -99,14 +109,17 @@ form button{padding:0.7rem;background:#1e3d59;color:white;border:none;border-rad
 <!-- Preloaded sample reviews -->
 <div class="review-card">
 <h4>John D.</h4>
+<div class="stars">⭐⭐⭐⭐⭐</div>
 <p>"Amazing experience! The tours were perfectly organized and memorable."</p>
 </div>
 <div class="review-card">
 <h4>Sarah K.</h4>
+<div class="stars">⭐⭐⭐⭐⭐</div>
 <p>"Highly recommend Travel Kashmir Now for hassle-free travel in Kashmir."</p>
 </div>
 <div class="review-card">
 <h4>Amit R.</h4>
+<div class="stars">⭐⭐⭐⭐⭐</div>
 <p>"The cab service was prompt and comfortable. Loved the Dal Lake tour!"</p>
 </div>
 </div>
@@ -134,7 +147,7 @@ form button{padding:0.7rem;background:#1e3d59;color:white;border:none;border-rad
 </footer>
 
 <script>
-// Dynamic Tours: overwrite preloaded content
+// Dynamic Tours from Supabase
 async function loadTours() {
     const { data: tours, error } = await supabase.from('tours').select('*');
     if(!error && tours.length > 0){
@@ -143,13 +156,15 @@ async function loadTours() {
         tours.forEach(tour=>{
             const card = document.createElement('div');
             card.className = 'tour-card';
-            card.innerHTML = `<img src="${tour.image}" alt="${tour.name}"><h3>${tour.name}</h3><p>${tour.description}</p>`;
+            let stars = '⭐⭐⭐⭐⭐';
+            if(tour.rating) stars = '⭐'.repeat(tour.rating);
+            card.innerHTML = `<img src="${tour.image}" alt="${tour.name}"><h3>${tour.name}</h3><div class="stars">${stars}</div><p>${tour.description}</p>`;
             container.appendChild(card);
         });
     }
 }
 
-// Dynamic Reviews: overwrite preloaded content
+// Dynamic Reviews from Supabase
 async function loadReviews() {
     const { data: reviews, error } = await supabase.from('reviews').select('*').order('id',{ascending:false});
     if(!error && reviews.length>0){
@@ -158,7 +173,8 @@ async function loadReviews() {
         reviews.forEach(r=>{
             const card = document.createElement('div');
             card.className='review-card';
-            card.innerHTML=`<h4>${r.name}</h4><p>${r.review}</p>`;
+            let stars = r.rating ? '⭐'.repeat(r.rating) : '⭐⭐⭐⭐⭐';
+            card.innerHTML=`<h4>${r.name}</h4><div class="stars">${stars}</div><p>${r.review}</p>`;
             container.appendChild(card);
         });
     }
@@ -169,26 +185,15 @@ document.getElementById('reviewForm').addEventListener('submit', async e=>{
     e.preventDefault();
     const name=document.getElementById('reviewerName').value;
     const review=document.getElementById('reviewText').value;
-    await supabase.from('reviews').insert([{name,review}]);
+    await supabase.from('reviews').insert([{name,review,rating:5}]);
     document.getElementById('reviewForm').reset();
-    loadReviews(); // reload dynamically
+    loadReviews();
 });
 
 // Initial load
 loadTours();
 loadReviews();
-
-// Sitemap XML (inline for search engines)
-const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://yourdomain.com/</loc><priority>1.0</priority></url>
-<url><loc>https://yourdomain.com/#overview</loc><priority>0.8</priority></url>
-<url><loc>https://yourdomain.com/#tours</loc><priority>0.8</priority></url>
-<url><loc>https://yourdomain.com/#reviews</loc><priority>0.8</priority></url>
-<url><loc>https://yourdomain.com/#contact</loc><priority>0.8</priority></url>
-</urlset>`;
-console.log("Sitemap XML:\n", sitemapContent);
 </script>
 
 </body>
-</html>
+</html
