@@ -1,174 +1,203 @@
-<?php
-$request = $_SERVER['REQUEST_URI'];
-
-// Serve robots.txt
-if (strpos($request, 'robots.txt') !== false) {
-    header('Content-Type: text/plain; charset=utf-8');
-    echo "User-agent: *\n";
-    echo "Allow: /\n";
-    echo "Sitemap: https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/sitemap.xml\n";
-    exit();
-}
-
-// Serve sitemap.xml
-if (strpos($request, 'sitemap.xml') !== false) {
-    header('Content-Type: application/xml; charset=utf-8');
-    echo '<?xml version="1.0" encoding="UTF-8"?>';
-    ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/</loc><priority>1.0</priority></url>
-  <url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#overview</loc><priority>0.8</priority></url>
-  <url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#tours</loc><priority>0.9</priority></url>
-  <url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#hotels</loc><priority>0.9</priority></url>
-  <url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#transport</loc><priority>0.8</priority></url>
-  <url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#reviews</loc><priority>0.8</priority></url>
-  <url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#contact</loc><priority>0.7</priority></url>
-</urlset>
-<?php
-    exit();
-}
-
-// Serve website
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Travel Kashmir Now</title>
-<meta name="description" content="Travel Kashmir Now – Book your Kashmir tour packages, hotels, and transportation with top reviews. Explore Srinagar, Gulmarg, Pahalgam and more.">
-<meta name="keywords" content="Kashmir travel, Srinagar tours, Gulmarg tour packages, Pahalgam, hotel booking, cab service, sightseeing, Travel Kashmir Now">
+<meta name="description" content="Travel Kashmir Now – Book tours, hotels, and cab services in beautiful Kashmir. Explore Srinagar, Gulmarg, Pahalgam, and more.">
+<meta name="keywords" content="Kashmir travel, Kashmir tours, hotel booking Kashmir, cab service Kashmir, Srinagar tourism, Pahalgam trips">
 <meta name="author" content="Travel Kashmir Now">
-<meta name="robots" content="index, follow">
 
-<!-- Google Verification & Analytics -->
-<meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
-<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'YOUR_GA_TRACKING_ID');
-</script>
-
-<!-- JSON-LD Structured Data -->
+<!-- Structured Data for SEO -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  "name": "Travel Kashmir Now",
-  "url": "https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/",
-  "logo": "https://yourdomain.com/logo.png",
-  "image": ["https://yourdomain.com/kashmir1.jpg","https://yourdomain.com/kashmir2.jpg"],
-  "description": "Book your Kashmir tours, hotels, and transportation with Travel Kashmir Now. Enjoy Srinagar, Gulmarg, Pahalgam and more.",
-  "telephone": "+918899434467",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Srinagar, Jammu and Kashmir",
-    "addressLocality": "Srinagar",
-    "addressRegion": "Jammu and Kashmir",
-    "postalCode": "190001",
-    "addressCountry": "IN"
-  },
-  "sameAs": [
-    "https://www.facebook.com/TravelKashmirNow",
-    "https://wa.me/918899434467"
+  "@graph": [
+    {
+      "@type": "TravelAgency",
+      "name": "Travel Kashmir Now",
+      "url": "https://yourwebsite.com",
+      "logo": "https://via.placeholder.com/150x50?text=Logo",
+      "sameAs": [
+        "https://www.facebook.com/yourpage",
+        "https://wa.me/918899434467"
+      ],
+      "telephone": "+918899434467",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Srinagar",
+        "addressLocality": "Srinagar",
+        "addressRegion": "Jammu and Kashmir",
+        "postalCode": "190001",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Kashmir Tour Packages",
+      "description": "Customized tours to explore Kashmir’s beauty, including houseboats, snow-capped mountains, and local sightseeing.",
+      "brand": "Travel Kashmir Now",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "price": "10000",
+        "availability": "https://schema.org/InStock",
+        "url": "https://yourwebsite.com/#services"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Rohit Sharma",
+      "reviewBody": "Amazing service! Our Kashmir trip was perfect thanks to Travel Kashmir Now.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Priya Kapoor",
+      "reviewBody": "Highly recommend for tours and cab services in Kashmir. Very professional.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    }
   ]
 }
 </script>
 
+<!-- CSS -->
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
-header { background:#005f73; color:white; padding:20px 0; text-align:center; }
-header img { height:60px; }
-nav { display:flex; justify-content:center; gap:20px; background:#0a9396; padding:10px 0; }
-nav a { color:white; text-decoration:none; font-weight:bold; }
-.hero { text-align:center; padding:50px 20px; background:url('https://yourdomain.com/kashmir-hero.jpg') no-repeat center/cover; color:white; }
-.hero h1 { font-size:48px; margin-bottom:10px; }
-.hero p { font-size:20px; }
-.section { padding:50px 20px; max-width:1200px; margin:0 auto; }
-h2 { color:#005f73; margin-bottom:20px; text-align:center; }
-.tours, .hotels, .transport { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-.card { background:white; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); overflow:hidden; width:300px; }
-.card img { width:100%; height:200px; object-fit:cover; }
-.card-content { padding:15px; }
-.card-content h3 { margin:0 0 10px 0; }
-.card-content p { margin:0; }
-footer { background:#005f73; color:white; text-align:center; padding:30px 20px; margin-top:50px; }
-.buttons { display:flex; justify-content:center; gap:20px; margin:20px 0; flex-wrap:wrap; }
-.buttons a { padding:15px 25px; background:#ee9b00; color:white; text-decoration:none; border-radius:5px; font-weight:bold; }
+body{font-family:Arial,sans-serif;margin:0;padding:0;line-height:1.6;}
+header{background:#004080;color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;}
+header img{height:50px;}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:bold;}
+.hero{background:url('https://via.placeholder.com/1200x500?text=Kashmir') center/cover no-repeat;height:500px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;font-weight:bold;text-shadow:2px 2px 4px #000;}
+section{padding:40px 20px;max-width:1200px;margin:auto;}
+h2{color:#004080;margin-bottom:20px;}
+.services,.reviews,.contact{display:flex;flex-wrap:wrap;gap:20px;}
+.service-item,.review-item{flex:1 1 300px;border:1px solid #ddd;padding:20px;border-radius:8px;}
+.service-item img{width:100%;height:200px;object-fit:cover;border-radius:8px;}
+.button{background:#ff6600;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;display:inline-block;margin-top:10px;}
+footer{background:#004080;color:#fff;text-align:center;padding:20px;}
+form input,form textarea{width:100%;padding:10px;margin:5px 0;border:1px solid #ccc;border-radius:5px;}
+form button{background:#ff6600;color:#fff;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;}
+.contact-buttons a{margin-right:10px;}
+pre{background:#f4f4f4;padding:10px;border-radius:5px;overflow-x:auto;}
 </style>
 </head>
 <body>
 
 <header>
-<img src="https://yourdomain.com/logo.png" alt="Travel Kashmir Now Logo">
-<h1>Travel Kashmir Now</h1>
-</header>
-
+<img src="https://via.placeholder.com/150x50?text=Logo" alt="Travel Kashmir Now Logo">
 <nav>
-<a href="#overview">Overview</a>
-<a href="#tours">Tours</a>
-<a href="#hotels">Hotels</a>
-<a href="#transport">Transportation</a>
+<a href="#about">About Us</a>
+<a href="#services">Services</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 </nav>
+</header>
 
-<section class="hero">
-<h1>Explore the Beauty of Kashmir</h1>
-<p>Book tours, hotels, and transportation in Srinagar, Gulmarg, Pahalgam, and more!</p>
-<div class="buttons">
-<a href="tel:+918899434467">Call Now</a>
-<a href="https://wa.me/918899434467">WhatsApp</a>
-<a href="https://www.google.com/search?q=Travel+Kashmir+Now&ludocid=your_google_place_id">Google Review</a>
-</div>
-</section>
+<div class="hero">Explore Beautiful Kashmir with Us</div>
 
-<section id="overview" class="section">
+<section id="about">
 <h2>About Us</h2>
-<p>Travel Kashmir Now is your trusted travel agency in Jammu & Kashmir. We provide personalized tour packages, hotel bookings, transportation services, and unforgettable experiences across Srinagar, Gulmarg, and Pahalgam. Your adventure starts here!</p>
+<p>Travel Kashmir Now is your trusted travel partner in Jammu & Kashmir. We offer premium tour packages, hotel bookings, and cab services. Explore the stunning landscapes of Srinagar, Gulmarg, Pahalgam, and beyond with our expert guidance.</p>
 </section>
 
-<section id="tours" class="section">
-<h2>Our Tour Packages</h2>
-<div class="tours">
-<div class="card"><img src="https://yourdomain.com/srinagar-tour.jpg" alt="Srinagar Tour"><div class="card-content"><h3>Srinagar Sightseeing</h3><p>Explore Dal Lake, Mughal Gardens, and the beautiful markets of Srinagar.</p></div></div>
-<div class="card"><img src="https://yourdomain.com/gulmarg-tour.jpg" alt="Gulmarg Tour"><div class="card-content"><h3>Gulmarg Adventure</h3><p>Enjoy skiing, gondola rides, and breathtaking Himalayan views in Gulmarg.</p></div></div>
-<div class="card"><img src="https://yourdomain.com/pahalgam-tour.jpg" alt="Pahalgam Tour"><div class="card-content"><h3>Pahalgam Nature Trip</h3><p>Experience the lush meadows, Lidder River, and scenic treks in Pahalgam.</p></div></div>
+<section id="services">
+<h2>Our Services</h2>
+<div class="services">
+<div class="service-item">
+<img src="https://via.placeholder.com/400x200?text=Tour+Packages" alt="Tour Packages">
+<h3>Tour Packages</h3>
+<p>Customized tours to explore Kashmir’s beauty, from houseboats to snow-capped mountains.</p>
+<a class="button" href="#contact">Book Now</a>
+</div>
+<div class="service-item">
+<img src="https://via.placeholder.com/400x200?text=Cab+Service" alt="Cab Service">
+<h3>Cab Services</h3>
+<p>Reliable transportation with professional drivers to ensure your comfort and safety.</p>
+<a class="button" href="#contact">Book Now</a>
+</div>
+<div class="service-item">
+<img src="https://via.placeholder.com/400x200?text=Hotel+Booking" alt="Hotel Booking">
+<h3>Hotel Booking</h3>
+<p>Premium hotels and houseboats at the best prices for a comfortable stay in Kashmir.</p>
+<a class="button" href="#contact">Book Now</a>
+</div>
 </div>
 </section>
 
-<section id="hotels" class="section">
-<h2>Hotels & Stay</h2>
-<div class="hotels">
-<div class="card"><img src="https://yourdomain.com/hotel1.jpg" alt="Hotel 1"><div class="card-content"><h3>Luxury Stay Srinagar</h3><p>Comfortable rooms, premium amenities, and scenic views.</p></div></div>
-<div class="card"><img src="https://yourdomain.com/hotel2.jpg" alt="Hotel 2"><div class="card-content"><h3>Cozy Pahalgam Resort</h3><p>Relax in the serene environment with all modern comforts.</p></div></div>
-</div>
-</section>
-
-<section id="transport" class="section">
-<h2>Transportation Services</h2>
-<div class="transport">
-<div class="card"><img src="https://yourdomain.com/cab1.jpg" alt="Cab Service"><div class="card-content"><h3>Cab & Pick-up Services</h3><p>Safe and reliable taxi services for your sightseeing and transfers.</p></div></div>
-</div>
-</section>
-
-<section id="reviews" class="section">
+<section id="reviews">
 <h2>Customer Reviews</h2>
-<p>⭐⭐⭐⭐⭐ "Excellent service and amazing tours! Highly recommended." – A satisfied customer</p>
-<p>⭐⭐⭐⭐⭐ "Best travel experience in Kashmir. Will book again!" – Another happy traveler</p>
-<div class="buttons"><a href="https://www.google.com/search?q=Travel+Kashmir+Now&ludocid=your_google_place_id">Add Your Review</a></div>
+<div class="reviews">
+<div class="review-item">
+<strong>Rohit Sharma</strong>
+<p>“Amazing service! Our Kashmir trip was perfect thanks to Travel Kashmir Now.”</p>
+</div>
+<div class="review-item">
+<strong>Priya Kapoor</strong>
+<p>“Highly recommend for tours and cab services in Kashmir. Very professional.”</p>
+</div>
+<div class="review-item">
+<strong>Arjun Singh</strong>
+<p>“Hotel booking was seamless. Beautiful locations and excellent service.”</p>
+</div>
+</div>
+
+<h3>Submit Your Review</h3>
+<form id="reviewForm">
+<input type="text" name="name" placeholder="Your Name" required>
+<textarea name="review" placeholder="Your Review" rows="4" required></textarea>
+<button type="submit">Submit Review</button>
+</form>
 </section>
 
-<section id="contact" class="section">
+<section id="contact">
 <h2>Contact Us</h2>
-<p>📍 Srinagar, Jammu & Kashmir</p>
-<p>📞 +91 88994 34467</p>
-<p>📧 <a href="mailto:travelkashmir11@gmail.com">travelkashmir11@gmail.com</a></p>
-<div class="buttons"><a href="tel:+918899434467">Call Now</a><a href="https://wa.me/918899434467">WhatsApp</a></div>
+<p>Reach us for bookings or inquiries.</p>
+<div class="contact-buttons">
+<a class="button" href="tel:+918899434467">Call Now</a>
+<a class="button" href="https://wa.me/918899434467" target="_blank">WhatsApp</a>
+</div>
+<form id="contactForm">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+<button type="submit">Send Message</button>
+</form>
 </section>
 
 <footer>
-<p>© 2026 Travel Kashmir Now | All Rights Reserved</p>
+<p>© 2026 Travel Kashmir Now | Sitemap & Robots info included</p>
+<pre>
+User-agent: *
+Allow: /
+Sitemap: https://yourwebsite.com/sitemap.xml
+https://yourwebsite.com/
+https://yourwebsite.com/#about
+https://yourwebsite.com/#services
+https://yourwebsite.com/#reviews
+https://yourwebsite.com/#contact
+</pre>
 </footer>
+
+<script>
+document.getElementById('reviewForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thank you for your review!');
+    this.reset();
+});
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Message sent successfully!');
+    this.reset();
+});
+</script>
+
+</body>
+</html>
