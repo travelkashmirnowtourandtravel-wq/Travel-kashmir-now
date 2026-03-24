@@ -3,114 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Kashmir Now - Explore Kashmir</title>
-<meta name="description" content="Travel Kashmir Now offers the best tours, cab services, hotel booking, and travel packages in Srinagar, Jammu & Kashmir.">
+<title>Travel Kashmir Now - Explore the Paradise on Earth</title>
+<meta name="description" content="Travel Kashmir Now offers the best tours, hotel bookings, cab services, and travel packages in Srinagar, Jammu & Kashmir.">
 <meta name="keywords" content="Kashmir Tours, Travel Kashmir Now, Srinagar Tourism, Kashmir Hotels, Cab Services, Travel Packages">
 
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  "name": "Travel Kashmir Now",
-  "url": "https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/",
-  "logo": "https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/logo.png",
-  "sameAs": [
-    "https://www.facebook.com/TravelKashmirNow",
-    "https://wa.me/918899434467"
-  ],
-  "description": "Travel Kashmir Now offers tours, hotel bookings, cab services, and Kashmir travel packages.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Srinagar",
-    "addressRegion": "Jammu and Kashmir",
-    "addressCountry": "IN"
-  },
-  "telephone": "+918899434467"
-}
-</script>
-
-<link rel="icon" href="https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/logo.png" type="image/png">
-
 <style>
-body { margin:0; font-family: Arial, sans-serif; line-height:1.6; }
-header { background:#0077b6; color:#fff; padding:20px 0; text-align:center; position: sticky; top:0; z-index:1000;}
-header img { width:150px; }
+/* Ultra Premium Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+body { margin:0; font-family:'Poppins', sans-serif; line-height:1.6; color:#333; background:#f9f9f9; }
+header { background:#0077b6; color:#fff; padding:20px 0; text-align:center; position: sticky; top:0; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.2);}
+header img { width:160px; }
 nav { margin-top:10px; }
-nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
-.hero { background: url('https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/kashmir.jpg') no-repeat center center/cover; height:500px; display:flex; align-items:center; justify-content:center; color:#fff; text-shadow:2px 2px 5px #000; font-size:2em; }
-section { padding:50px 20px; max-width:1200px; margin:auto; }
-h2 { color:#0077b6; }
-.tours, .reviews { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-.tour, .review { border:1px solid #ddd; padding:20px; border-radius:10px; flex:1 1 300px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
-footer { background:#023e8a; color:#fff; text-align:center; padding:20px; }
+nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:600; transition:0.3s; }
+nav a:hover { color:#ffd700; }
+.hero { background: url('data:image/jpeg;base64,/*BASE64_HERO_IMAGE*/') no-repeat center center/cover; height:500px; display:flex; align-items:center; justify-content:center; color:#fff; text-shadow:2px 2px 8px #000; font-size:2.5em; font-weight:700; text-align:center; padding:0 20px;}
+section { padding:60px 20px; max-width:1200px; margin:auto; }
+h2 { color:#0077b6; font-size:2em; margin-bottom:20px; text-align:center; }
+h3 { margin-top:0; }
+.tours, .reviews, .gallery { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+.tour, .review, .gallery-item { border:1px solid #ddd; padding:20px; border-radius:10px; flex:1 1 300px; box-shadow:0 0 15px rgba(0,0,0,0.1); background:#fff; transition:0.3s; }
+.tour:hover, .review:hover, .gallery-item:hover { transform: translateY(-5px); box-shadow:0 0 20px rgba(0,0,0,0.2);}
+.review-stars { color: #ffd700; font-size:1.2em; margin-bottom:5px; }
+footer { background:#023e8a; color:#fff; text-align:center; padding:20px; margin-top:40px; }
 .contact-buttons { position: fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; }
-.contact-buttons a { display:block; padding:15px; border-radius:50px; color:#fff; text-align:center; font-weight:bold; text-decoration:none; }
+.contact-buttons a { display:block; padding:15px 20px; border-radius:50px; color:#fff; text-align:center; font-weight:bold; text-decoration:none; box-shadow:0 0 10px rgba(0,0,0,0.3);}
 .call-btn { background:#ff4d6d; }
 .whatsapp-btn { background:#25D366; }
+input, textarea, select, button { font-family:'Poppins', sans-serif; }
+.review-form { display:flex; flex-direction:column; max-width:500px; margin:auto; gap:10px; }
+.review-form select, .review-form input, .review-form textarea { padding:10px; border-radius:5px; border:1px solid #ccc; }
+button.submit-btn { background:#0077b6; color:#fff; border:none; padding:10px; border-radius:5px; font-weight:600; cursor:pointer; transition:0.3s; }
+button.submit-btn:hover { background:#005f86; }
+.lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:10000; }
+.lightbox img { max-width:90%; max-height:90%; border-radius:10px; }
+@media(max-width:768px){ .tours,.reviews,.gallery{flex-direction:column;}}
 </style>
 </head>
 <body>
 
-<!-- Header -->
 <header>
-<img src="https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/logo.png" alt="Travel Kashmir Now Logo">
+<img src="data:image/png;base64,/*BASE64_LOGO_IMAGE*/" alt="Travel Kashmir Now Logo">
 <nav>
-<a href="#about">About Us</a>
+<a href="#about">About</a>
 <a href="#tours">Tours</a>
 <a href="#hotels">Hotels</a>
+<a href="#gallery">Gallery</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
-<!-- Hero -->
 <div class="hero">
-Explore the Beauty of Kashmir with Travel Kashmir Now
+Explore the Paradise on Earth – Kashmir with Travel Kashmir Now
 </div>
 
-<!-- About -->
 <section id="about">
-<h2>About Us</h2>
-<p>Travel Kashmir Now is your trusted travel agency in Srinagar, offering the best Kashmir tours, hotel bookings, and cab services. We make your Kashmir travel experience unforgettable with personalized packages, expert guides, and seamless travel arrangements.</p>
+<h2>Welcome to Travel Kashmir Now</h2>
+<p>We provide unforgettable Kashmir travel experiences with personalized tours, safe cab services, and comfortable hotel stays. Discover Srinagar, Gulmarg, Pahalgam, and Betaab Valley with expert guides and hassle-free planning.</p>
 </section>
 
-<!-- Tours -->
 <section id="tours">
-<h2>Our Tours & Packages</h2>
+<h2>Our Popular Tours & Packages</h2>
 <div class="tours">
-<div class="tour">
-<h3>Srinagar Local Tour</h3>
-<p>Explore Dal Lake, Mughal Gardens, and local markets of Srinagar in a full-day tour.</p>
-</div>
-<div class="tour">
-<h3>Gulmarg Ski Adventure</h3>
-<p>Enjoy skiing, snowboarding, and Gondola rides in the scenic Gulmarg mountains.</p>
-</div>
-<div class="tour">
-<h3>Pahalgam & Betaab Valley</h3>
-<p>Experience lush green meadows and breathtaking landscapes of Pahalgam and Betaab Valley.</p>
-</div>
+<div class="tour"><h3>Srinagar Local Tour</h3><p>Visit Dal Lake, Mughal Gardens, and local bazaars.</p></div>
+<div class="tour"><h3>Gulmarg Adventure</h3><p>Enjoy skiing, snowboarding, and Gondola rides.</p></div>
+<div class="tour"><h3>Pahalgam & Betaab Valley</h3><p>Explore the lush green meadows and breathtaking landscapes.</p></div>
 </div>
 </section>
 
-<!-- Hotels & Cab Services -->
 <section id="hotels">
-<h2>Hotels & Cab Services</h2>
-<p>We provide comfortable hotel bookings and safe cab services across Srinagar, Gulmarg, Pahalgam, and more. Book your stay and travel hassle-free with us.</p>
+<h2>Hotels & Transportation</h2>
+<p>Comfortable hotels and safe cab services across Srinagar, Gulmarg, and Pahalgam.</p>
 </section>
 
-<!-- Reviews -->
+<section id="gallery">
+<h2>Kashmir Photo Gallery</h2>
+<div class="gallery">
+<div class="gallery-item"><img src="data:image/jpeg;base64,/*BASE64_IMAGE_1*/" alt="Kashmir Lake" style="width:100%; cursor:pointer;"></div>
+<div class="gallery-item"><img src="data:image/jpeg;base64,/*BASE64_IMAGE_2*/" alt="Kashmir Mountains" style="width:100%; cursor:pointer;"></div>
+<div class="gallery-item"><img src="data:image/jpeg;base64,/*BASE64_IMAGE_3*/" alt="Kashmir Valley" style="width:100%; cursor:pointer;"></div>
+</div>
+</section>
+
 <section id="reviews">
 <h2>Customer Reviews</h2>
-<div class="reviews">
-<div class="review"><strong>Rohit Sharma</strong><p>⭐⭐⭐⭐⭐ Amazing tour! The cab service was punctual and the guide was very knowledgeable.</p></div>
-<div class="review"><strong>Neha Singh</strong><p>⭐⭐⭐⭐⭐ Beautiful experience! The hotel arrangements were excellent and the itinerary was perfect.</p></div>
-<div class="review"><strong>Amit Khanna</strong><p>⭐⭐⭐⭐⭐ Highly recommend Travel Kashmir Now for anyone visiting Kashmir!</p></div>
+
+<div class="reviews" id="reviews-container">
+<div class="review"><h3>Rohit Sharma</h3><div class="review-stars">⭐⭐⭐⭐⭐</div><p>Excellent tour! Cab service was punctual.</p></div>
+<div class="review"><h3>Neha Singh</h3><div class="review-stars">⭐⭐⭐⭐⭐</div><p>Amazing experience! The hotel arrangements were top-notch.</p></div>
+<div class="review"><h3>Amit Khanna</h3><div class="review-stars">⭐⭐⭐⭐⭐</div><p>Highly recommend Travel Kashmir Now!</p></div>
 </div>
+
+<h3>Submit Your Review</h3>
+<form class="review-form" id="review-form">
+<input type="text" id="reviewer-name" placeholder="Your Name" required>
+<select id="reviewer-rating" required>
+<option value="">Select Rating</option>
+<option value="1">1 Star</option>
+<option value="2">2 Stars</option>
+<option value="3">3 Stars</option>
+<option value="4">4 Stars</option>
+<option value="5">5 Stars</option>
+</select>
+<textarea id="reviewer-comment" rows="4" placeholder="Write your review here..." required></textarea>
+<button type="submit" class="submit-btn">Submit Review</button>
+</form>
 </section>
 
-<!-- Contact -->
 <section id="contact">
 <h2>Contact Us</h2>
 <p>Email: <a href="mailto:travelkashmir11@gmail.com">travelkashmir11@gmail.com</a></p>
@@ -118,47 +117,47 @@ Explore the Beauty of Kashmir with Travel Kashmir Now
 <p>Location: Srinagar, Jammu & Kashmir, India</p>
 </section>
 
-<!-- Contact Buttons -->
 <div class="contact-buttons">
 <a href="tel:+918899434467" class="call-btn">Call Now</a>
 <a href="https://wa.me/918899434467" target="_blank" class="whatsapp-btn">WhatsApp</a>
 </div>
 
-<!-- Footer -->
 <footer>
 <p>© 2026 Travel Kashmir Now | Srinagar, Jammu & Kashmir</p>
 </footer>
 
-<!-- JavaScript to serve sitemap.xml & robots.txt automatically -->
+<div class="lightbox" id="lightbox"><img src="" alt="Gallery Image"></div>
+
 <script>
-// Serve sitemap.xml if URL ends with /sitemap.xml
-if (window.location.pathname.endsWith("sitemap.xml")) {
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#about</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#tours</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#hotels</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#reviews</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/#contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-</urlset>`;
-  document.open();
-  document.write(sitemap);
-  document.contentType = "text/xml";
-  document.close();
-}
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+document.querySelectorAll('.gallery img').forEach(img=>{
+img.addEventListener('click',()=>{lightbox.style.display='flex'; lightbox.querySelector('img').src=img.src;});
+});
+lightbox.addEventListener('click',()=>{lightbox.style.display='none';});
 
-// Serve robots.txt if URL ends with /robots.txt
-if (window.location.pathname.endsWith("robots.txt")) {
-  const robots = `User-agent: *
-Allow: /
-Sitemap: https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/sitemap.xml`;
-  document.open();
-  document.write(robots);
-  document.contentType = "text/plain";
-  document.close();
-}
+// Reviews form
+const reviewForm = document.getElementById('review-form');
+const reviewsContainer = document.getElementById('reviews-container');
+reviewForm.addEventListener('submit', function(e){
+e.preventDefault();
+const name = document.getElementById('reviewer-name').value;
+const rating = parseInt(document.getElementById('reviewer-rating').value);
+const comment = document.getElementById('reviewer-comment').value;
+let stars = '⭐'.repeat(rating);
+const reviewDiv = document.createElement('div');
+reviewDiv.classList.add('review');
+reviewDiv.innerHTML = `<h3>${name}</h3><div class="review-stars">${stars}</div><p>${comment}</p>`;
+reviewsContainer.appendChild(reviewDiv);
+reviewForm.reset();
+});
+
+// Sitemap & Robots
+if(window.location.pathname.endsWith("sitemap.xml")){
+document.open();
+document.write(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/</loc><changefreq>daily</changefreq><priority>1.0</priority></url></urlset>`);document.contentType="text/xml";document.close();}
+if(window.location.pathname.endsWith("robots.txt")){
+document.open();document.write("User-agent: *\nAllow: /\nSitemap: https://travelkashmirnowtourandtravel-wq.github.io/Travel-kashmir-now/sitemap.xml");document.contentType="text/plain";document.close();}
 </script>
-
 </body>
 </html>
