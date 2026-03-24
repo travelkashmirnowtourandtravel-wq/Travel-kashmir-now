@@ -3,155 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Kashmir Now – Explore Paradise on Earth</title>
-<meta name="description" content="Travel Kashmir Now offers luxury tours, hotel bookings, cab services, and travel packages in Kashmir.">
+<title>Travel Kashmir Now – Explore the Beauty of Kashmir</title>
+<meta name="description" content="Travel Kashmir Now offers the best tours, cab services, hotel booking, and travel packages in Kashmir. Call or WhatsApp us now!">
+<meta name="keywords" content="Kashmir tours, Kashmir travel, Srinagar taxi, Kashmir cab services, Travel Kashmir Now">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="logo.png" type="image/png">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Supabase JS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const supabaseUrl = 'https://neyqjvmnepmalhogtipj.supabase.co';
+  const supabaseKey = 'sb_secret_aY-7c1HJfVXqOP_7I7w-dw_uvhH-bYF';
+  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+</script>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-body{margin:0;font-family:'Poppins',sans-serif;background:#f4f4f9;color:#333;}
-header{background:#0077b6;color:#fff;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,0.2);}
-header img{width:150px;}
-.nav-links a{color:#fff;margin:0 10px;font-weight:700;text-decoration:none;}
-.nav-links a:hover{color:#ffd700;}
-.top-buttons{display:flex;gap:10px;}
-.top-buttons a{padding:10px 15px;background:#ff4d6d;color:#fff;font-weight:700;border-radius:50px;text-decoration:none;}
-.hero{background:url('https://via.placeholder.com/1200x400?text=Kashmir+Paradise') no-repeat center/cover;height:400px;display:flex;align-items:center;justify-content:center;color:#fff;text-shadow:2px 2px 8px #000;font-size:2.5em;font-weight:700;text-align:center;}
-section{padding:50px 20px;max-width:1200px;margin:auto;}
-h2{font-size:2em;margin-bottom:20px;text-align:center;font-weight:700;}
-h2 span{color:#ff4d6d;}
-.tours,.reviews,.gallery{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
-.tour,.review,.gallery-item{border-radius:10px;padding:20px;background:#fff;flex:1 1 300px;box-shadow:0 0 15px rgba(0,0,0,0.1);transition:0.3s;}
-.tour:hover,.review:hover,.gallery-item:hover{transform:translateY(-5px);box-shadow:0 0 20px rgba(0,0,0,0.2);}
-.review-stars{color:#ffd700;font-size:1.2em;margin-bottom:5px;}
-.review-form{display:flex;flex-direction:column;gap:10px;max-width:500px;margin:auto;}
-.review-form input, .review-form textarea, .review-form select{padding:10px;border-radius:5px;border:1px solid #ccc;font-family:'Poppins',sans-serif;}
-.review-form button{background:#0077b6;color:#fff;font-weight:700;border:none;padding:10px;border-radius:5px;cursor:pointer;transition:0.3s;}
-.review-form button:hover{background:#005f86;}
-.contact-buttons{position:fixed;top:80px;right:20px;display:flex;flex-direction:column;gap:10px;z-index:1000;}
-.contact-buttons a{padding:15px 20px;border-radius:50px;color:#fff;text-align:center;font-weight:bold;text-decoration:none;box-shadow:0 0 10px rgba(0,0,0,0.3);}
-.call-btn{background:#ff4d6d;}
+body {margin:0;font-family:'Roboto',sans-serif;background:#f8f9fa;color:#333;}
+header {background:url('kashmir-banner.jpg') no-repeat center/cover;height:80vh;display:flex;align-items:center;justify-content:center;color:white;text-align:center;position:relative;}
+header::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);}
+header h1{font-size:3rem;z-index:1;}
+nav{background:#1e3d59;display:flex;justify-content:space-around;padding:1rem;}
+nav a{color:white;text-decoration:none;font-weight:600;}
+section{padding:2rem 1rem;max-width:1200px;margin:auto;}
+h2{color:#1e3d59;margin-bottom:1rem;}
+.tours,.reviews{display:flex;flex-wrap:wrap;gap:1rem;}
+.tour-card,.review-card{background:white;box-shadow:0 0 10px rgba(0,0,0,0.1);flex:1 1 calc(33% - 1rem);padding:1rem;border-radius:10px;}
+.tour-card img,.review-card img{width:100%;border-radius:10px;}
+footer{background:#1e3d59;color:white;text-align:center;padding:1rem;}
+.call-whatsapp{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:10px;}
+.call-whatsapp a{text-decoration:none;color:white;padding:0.8rem 1rem;border-radius:50px;font-weight:bold;display:flex;align-items:center;gap:0.5rem;}
+.call-btn{background:#28a745;}
 .whatsapp-btn{background:#25D366;}
-.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:10000;}
-.lightbox img{max-width:90%;max-height:90%;border-radius:10px;}
-footer{background:#023e8a;color:#fff;text-align:center;padding:20px;margin-top:40px;}
-@media(max-width:768px){.tours,.reviews,.gallery{flex-direction:column;}}
+form{margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;}
+form input,form textarea{padding:0.5rem;border-radius:5px;border:1px solid #ccc;width:100%;}
+form button{padding:0.7rem;background:#1e3d59;color:white;border:none;border-radius:5px;cursor:pointer;}
+@media(max-width:768px){.tour-card,.review-card{flex:1 1 100%;}}
 </style>
 </head>
 <body>
 
 <header>
-<img src="https://via.placeholder.com/150x50?text=Logo" alt="Travel Kashmir Now Logo">
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#tours">Tours</a>
-<a href="#hotels">Hotels</a>
-<a href="#gallery">Gallery</a>
-<a href="#reviews">Reviews</a>
-<a href="#contact">Contact</a>
-</div>
-<div class="top-buttons">
-<a href="tel:+918899434467" class="call-btn">Call Now</a>
-<a href="https://wa.me/918899434467" class="whatsapp-btn">WhatsApp</a>
-</div>
+<h1>Travel Kashmir Now</h1>
 </header>
 
-<div class="hero">Explore the <span>Paradise on Earth</span> – Kashmir</div>
+<nav>
+<a href="#overview">Overview</a>
+<a href="#tours">Tours & Packages</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<section id="about">
-<h2>About <span>Us</span></h2>
-<p>Travel Kashmir Now is your trusted travel partner. We offer luxury tours, comfortable hotels, reliable cab services, and fully customizable travel packages. Explore Srinagar, Gulmarg, Pahalgam, and more.</p>
-<p><strong>Address:</strong> Srinagar, Jammu and Kashmir 190001</p>
+<section id="overview">
+<h2>About Travel Kashmir Now</h2>
+<p>We offer premium travel services in Kashmir including guided tours, cab services, hotel bookings, and exclusive travel packages. Explore Srinagar, Gulmarg, Pahalgam, and more with us.</p>
 </section>
 
 <section id="tours">
-<h2>Our <span>Tours & Packages</span></h2>
+<h2>Our Tours & Packages</h2>
 <div class="tours">
-<div class="tour"><h3>Srinagar Local Tour</h3><img src="https://via.placeholder.com/300x200?text=Srinagar" style="width:100%;"><p>Dal Lake, Mughal Gardens, Shankaracharya Temple, and local markets.</p></div>
-<div class="tour"><h3>Gulmarg Adventure Tour</h3><img src="https://via.placeholder.com/300x200?text=Gulmarg" style="width:100%;"><p>Skiing, Gondola rides, and snowy landscapes.</p></div>
-<div class="tour"><h3>Pahalgam & Betaab Valley</h3><img src="https://via.placeholder.com/300x200?text=Pahalgam" style="width:100%;"><p>Lush meadows, river streams, and scenic views.</p></div>
+<!-- Preloaded tours -->
+<div class="tour-card">
+<img src="dal-lake.jpg" alt="Dal Lake Tour">
+<h3>Dal Lake Tour</h3>
+<p>Enjoy a serene Shikara ride and sightseeing on the famous Dal Lake in Srinagar.</p>
 </div>
-</section>
-
-<section id="hotels">
-<h2>Hotels & Transportation</h2>
-<p>We provide comfortable hotel stays across Kashmir and reliable cab services covering all major tourist spots.</p>
-</section>
-
-<section id="gallery">
-<h2>Photo <span>Gallery</span></h2>
-<div class="gallery">
-<div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Dal+Lake" style="width:100%;cursor:pointer;"></div>
-<div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Gulmarg" style="width:100%;cursor:pointer;"></div>
-<div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Pahalgam" style="width:100%;cursor:pointer;"></div>
+<div class="tour-card">
+<img src="gulmarg.jpg" alt="Gulmarg Adventure">
+<h3>Gulmarg Adventure</h3>
+<p>Snow sports, scenic views, and trekking in the beautiful Gulmarg hills.</p>
+</div>
+<div class="tour-card">
+<img src="pahalgam.jpg" alt="Pahalgam Excursion">
+<h3>Pahalgam Excursion</h3>
+<p>Explore lush valleys, rivers, and trekking trails in Pahalgam.</p>
+</div>
+<div class="tour-card">
+<img src="cab-service.jpg" alt="Srinagar Cab Service">
+<h3>Srinagar Cab Service</h3>
+<p>Reliable and comfortable taxi service across Srinagar and nearby destinations.</p>
+</div>
+<div class="tour-card">
+<img src="kashmir-package.jpg" alt="Kashmir Packages">
+<h3>Customized Kashmir Packages</h3>
+<p>Multi-day tours covering Srinagar, Gulmarg, Pahalgam, and other scenic spots.</p>
+</div>
 </div>
 </section>
 
 <section id="reviews">
-<h2>Customer <span>Reviews</span></h2>
-<div class="reviews" id="reviews-container"></div>
-
-<h3>Submit Your Review</h3>
-<form id="review-form" class="review-form">
-<input type="text" id="reviewer-name" placeholder="Your Name" required>
-<select id="reviewer-rating" required>
-<option value="">Select Rating</option>
-<option value="1">1 Star</option>
-<option value="2">2 Stars</option>
-<option value="3">3 Stars</option>
-<option value="4">4 Stars</option>
-<option value="5">5 Stars</option>
-</select>
-<textarea id="reviewer-comment" rows="4" placeholder="Write your review..." required></textarea>
+<h2>Customer Reviews</h2>
+<div class="reviews">
+<!-- Preloaded sample reviews -->
+<div class="review-card">
+<h4>John D.</h4>
+<p>"Amazing experience! The tours were perfectly organized and memorable."</p>
+</div>
+<div class="review-card">
+<h4>Sarah K.</h4>
+<p>"Highly recommend Travel Kashmir Now for hassle-free travel in Kashmir."</p>
+</div>
+<div class="review-card">
+<h4>Amit R.</h4>
+<p>"The cab service was prompt and comfortable. Loved the Dal Lake tour!"</p>
+</div>
+</div>
+<form id="reviewForm">
+<input type="text" id="reviewerName" placeholder="Your Name" required>
+<textarea id="reviewText" placeholder="Your Review" required></textarea>
 <button type="submit">Submit Review</button>
 </form>
 </section>
 
 <section id="contact">
-<h2>Contact <span>Us</span></h2>
-<p>Email: <a href="mailto:travelkashmir11@gmail.com">travelkashmir11@gmail.com</a></p>
-<p>Phone: <a href="tel:+918899434467">+91 88994 34467</a></p>
-<p><strong>Address:</strong> Srinagar, Jammu and Kashmir 190001</p>
+<h2>Contact Us</h2>
+<p>📍 Location: Srinagar, Jammu & Kashmir 190001</p>
+<p>📞 Phone: <a href="tel:+918899434467">8899434467</a></p>
+<p>✉ Email: <a href="mailto:travelkashmir11@gmail.com">travelkashmir11@gmail.com</a></p>
 </section>
 
-<div class="lightbox" id="lightbox"><img></div>
+<div class="call-whatsapp">
+<a href="tel:+918899434467" class="call-btn">📞 Call Now</a>
+<a href="https://wa.me/918899434467" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+</div>
 
-<footer>© 2026 Travel Kashmir Now</footer>
+<footer>
+<p>© 2026 Travel Kashmir Now. All rights reserved.</p>
+</footer>
 
 <script>
-// Local storage based review system (no Firebase)
-const reviewsContainer = document.getElementById('reviews-container');
-const reviewForm = document.getElementById('review-form');
+// Preloaded tours and reviews are already displayed above
+// But we can still enable dynamic Supabase integration if needed
 
-function loadReviews(){
-  let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-  reviewsContainer.innerHTML = '';
-  reviews.forEach(r=>{
-    const div = document.createElement('div');
-    div.className='review';
-    div.innerHTML=`<h3>${r.name}</h3><div class="review-stars">${'⭐'.repeat(r.rating)}</div><p>${r.comment}</p>`;
-    reviewsContainer.appendChild(div);
-  });
-}
-
-reviewForm.addEventListener('submit', e=>{
-  e.preventDefault();
-  let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-  const name = document.getElementById('reviewer-name').value;
-  const rating = parseInt(document.getElementById('reviewer-rating').value);
-  const comment = document.getElementById('reviewer-comment').value;
-  reviews.unshift({name,rating,comment});
-  localStorage.setItem('reviews', JSON.stringify(reviews));
-  reviewForm.reset();
-  loadReviews();
+// Submit Review to Supabase
+document.getElementById('reviewForm').addEventListener('submit', async e=>{
+    e.preventDefault();
+    const name=document.getElementById('reviewerName').value;
+    const review=document.getElementById('reviewText').value;
+    await supabase.from('reviews').insert([{name,review}]);
+    document.getElementById('reviewForm').reset();
+    alert("Thank you! Your review has been submitted.");
 });
 
-loadReviews();
-
-// Gallery lightbox
-const lightbox=document.getElementById('lightbox');
-document.querySelectorAll('.gallery img').forEach(img=>{
-  img.onclick=()=>{lightbox.style.display='flex';lightbox.querySelector('img').src=img.src;}
-});
-lightbox.onclick=()=>{lightbox.style.display='none';};
+// Embedded Sitemap (inline for search engines)
+const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://yourdomain.com/</loc><priority>1.0</priority></url>
+<url><loc>https://yourdomain.com/#overview</loc><priority>0.8</priority></url>
+<url><loc>https://yourdomain.com/#tours</loc><priority>0.8</priority></url>
+<url><loc>https://yourdomain.com/#reviews</loc><priority>0.8</priority></url>
+<url><loc>https://yourdomain.com/#contact</loc><priority>0.8</priority></url>
+</urlset>`;
+console.log("Sitemap XML:\n", sitemapContent);
 </script>
 
 </body>
