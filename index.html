@@ -3,89 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Kashmir Now – Explore the Paradise on Earth</title>
+<title>Travel Kashmir Now – Explore Paradise on Earth</title>
 <meta name="description" content="Travel Kashmir Now offers luxury tours, hotel bookings, cab services, and travel packages in Kashmir.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 body{margin:0;font-family:'Poppins',sans-serif;background:#f4f4f9;color:#333;}
-header{background:#0077b6;color:#fff;padding:20px;text-align:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,0.2);}
-header img{width:160px;}
-nav a{color:#fff;margin:0 15px;text-decoration:none;font-weight:600;}
-nav a:hover{color:#ffd700;}
-.hero{background:url('https://i.ibb.co/7SxQ6RJ/kashmir-hero.jpg') no-repeat center/cover;height:500px;display:flex;align-items:center;justify-content:center;color:#fff;text-shadow:2px 2px 8px #000;font-size:2.5em;font-weight:700;text-align:center;padding:0 20px;}
-section{padding:60px 20px;max-width:1200px;margin:auto;}
-h2{font-size:2em;margin-bottom:20px;text-align:center;}
-#about h2{color:#ff4d6d;}
-#tours h2{color:#00b894;}
-#hotels h2{color:#fdcb6e;}
-#gallery h2{color:#6c5ce7;}
-#reviews h2{color:#d63031;}
-#contact h2{color:#0984e3;}
+header{background:#0077b6;color:#fff;padding:20px;text-align:center;position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 5px rgba(0,0,0,0.2);}
+header img{width:150px;}
+.nav-links a{color:#fff;margin:0 10px;font-weight:700;text-decoration:none;}
+.nav-links a:hover{color:#ffd700;}
+.top-buttons{display:flex;gap:10px;}
+.top-buttons a{padding:10px 15px;background:#ff4d6d;color:#fff;font-weight:700;border-radius:50px;text-decoration:none;}
+.hero{background:url('https://via.placeholder.com/1200x400?text=Kashmir+Paradise') no-repeat center/cover;height:400px;display:flex;align-items:center;justify-content:center;color:#fff;text-shadow:2px 2px 8px #000;font-size:2.5em;font-weight:700;text-align:center;}
+section{padding:50px 20px;max-width:1200px;margin:auto;}
+h2{font-size:2em;margin-bottom:20px;text-align:center;font-weight:700;}
+h2 span{color:#ff4d6d;} /* heading color */
 .tours,.reviews,.gallery{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
-.tour,.review,.gallery-item{border:1px solid #ddd;padding:20px;border-radius:10px;flex:1 1 300px;box-shadow:0 0 15px rgba(0,0,0,0.1);background:#fff;transition:0.3s;}
+.tour,.review,.gallery-item{border-radius:10px;padding:20px;background:#fff;flex:1 1 300px;box-shadow:0 0 15px rgba(0,0,0,0.1);transition:0.3s;}
 .tour:hover,.review:hover,.gallery-item:hover{transform:translateY(-5px);box-shadow:0 0 20px rgba(0,0,0,0.2);}
 .review-stars{color:#ffd700;font-size:1.2em;margin-bottom:5px;}
-footer{background:#023e8a;color:#fff;text-align:center;padding:20px;margin-top:40px;}
-.contact-buttons{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:10px;}
-.contact-buttons a{display:block;padding:15px 20px;border-radius:50px;color:#fff;text-align:center;font-weight:bold;text-decoration:none;box-shadow:0 0 10px rgba(0,0,0,0.3);}
+.review-form{display:flex;flex-direction:column;gap:10px;max-width:500px;margin:auto;}
+.review-form input, .review-form textarea, .review-form select{padding:10px;border-radius:5px;border:1px solid #ccc;font-family:'Poppins',sans-serif;}
+.review-form button{background:#0077b6;color:#fff;font-weight:700;border:none;padding:10px;border-radius:5px;cursor:pointer;transition:0.3s;}
+.review-form button:hover{background:#005f86;}
+.contact-buttons{position:fixed;top:80px;right:20px;display:flex;flex-direction:column;gap:10px;z-index:1000;}
+.contact-buttons a{padding:15px 20px;border-radius:50px;color:#fff;text-align:center;font-weight:bold;text-decoration:none;box-shadow:0 0 10px rgba(0,0,0,0.3);}
 .call-btn{background:#ff4d6d;}
 .whatsapp-btn{background:#25D366;}
-.review-form{display:flex;flex-direction:column;max-width:500px;margin:auto;gap:10px;}
-input,textarea,select,button{font-family:'Poppins',sans-serif;}
-button.submit-btn{background:#0077b6;color:#fff;border:none;padding:10px;border-radius:5px;font-weight:600;cursor:pointer;transition:0.3s;}
-button.submit-btn:hover{background:#005f86;}
 .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:10000;}
 .lightbox img{max-width:90%;max-height:90%;border-radius:10px;}
+footer{background:#023e8a;color:#fff;text-align:center;padding:20px;margin-top:40px;}
 @media(max-width:768px){.tours,.reviews,.gallery{flex-direction:column;}}
 </style>
 </head>
 <body>
 
 <header>
-<img src="https://i.ibb.co/0JzqR6h/logo.png" alt="Travel Kashmir Now Logo">
-<nav>
+<img src="https://via.placeholder.com/150x50?text=Logo" alt="Travel Kashmir Now Logo">
+<div class="nav-links">
 <a href="#about">About</a>
 <a href="#tours">Tours</a>
 <a href="#hotels">Hotels</a>
 <a href="#gallery">Gallery</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
-</nav>
+</div>
+<div class="top-buttons">
+<a href="tel:+918899434467" class="call-btn">Call Now</a>
+<a href="https://wa.me/918899434467" class="whatsapp-btn">WhatsApp</a>
+</div>
 </header>
 
-<div class="hero">Explore the Paradise on Earth – Kashmir with Travel Kashmir Now</div>
+<div class="hero">Explore the <span>Paradise on Earth</span> – Kashmir</div>
 
 <section id="about">
-<h2>About Us</h2>
-<p>Travel Kashmir Now is your trusted travel partner in Kashmir. We offer luxury and affordable tours, comfortable hotels, reliable cab services, and fully customizable travel packages. Explore Srinagar, Gulmarg, Pahalgam, and other breathtaking destinations. Your trip will be safe, memorable, and filled with beauty and adventure.</p>
+<h2>About <span>Us</span></h2>
+<p>Travel Kashmir Now is your trusted travel partner. We offer luxury tours, comfortable hotels, reliable cab services, and fully customizable travel packages. Explore Srinagar, Gulmarg, Pahalgam, and more.</p>
 <p><strong>Address:</strong> Srinagar, Jammu and Kashmir 190001</p>
 </section>
 
 <section id="tours">
-<h2>Our Popular Tours & Packages</h2>
+<h2>Our <span>Tours & Packages</span></h2>
 <div class="tours">
-<div class="tour"><h3>Srinagar Local Tour</h3><p>Visit Dal Lake, Mughal Gardens, Shankaracharya Temple, and local handicraft markets.</p></div>
-<div class="tour"><h3>Gulmarg Adventure Tour</h3><p>Enjoy skiing, snowboarding, and the scenic Gulmarg Gondola ride.</p></div>
-<div class="tour"><h3>Pahalgam & Betaab Valley</h3><p>Experience lush meadows, river rafting, and breathtaking valley landscapes.</p></div>
+<div class="tour"><h3>Srinagar Local Tour</h3><img src="https://via.placeholder.com/300x200?text=Srinagar" style="width:100%;"><p>Dal Lake, Mughal Gardens, Shankaracharya Temple, and local markets.</p></div>
+<div class="tour"><h3>Gulmarg Adventure Tour</h3><img src="https://via.placeholder.com/300x200?text=Gulmarg" style="width:100%;"><p>Skiing, Gondola rides, and snowy landscapes.</p></div>
+<div class="tour"><h3>Pahalgam & Betaab Valley</h3><img src="https://via.placeholder.com/300x200?text=Pahalgam" style="width:100%;"><p>Lush meadows, river streams, and scenic views.</p></div>
 </div>
 </section>
 
 <section id="hotels">
 <h2>Hotels & Transportation</h2>
-<p>Comfortable, hand-picked hotels across Kashmir with 24/7 customer service. Reliable cab services cover all major tourist spots ensuring safe and timely travel.</p>
+<p>We provide comfortable hotel stays across Kashmir and reliable cab services covering all major tourist spots.</p>
 </section>
 
 <section id="gallery">
-<h2>Kashmir Photo Gallery</h2>
+<h2>Photo <span>Gallery</span></h2>
 <div class="gallery">
-<div class="gallery-item"><img src="https://i.ibb.co/ZXD2t1J/gallery1.jpg" alt="Dal Lake" style="width:100%;cursor:pointer;"></div>
-<div class="gallery-item"><img src="https://i.ibb.co/T8Yx8Gd/gallery2.jpg" alt="Gulmarg" style="width:100%;cursor:pointer;"></div>
-<div class="gallery-item"><img src="https://i.ibb.co/7rhv4sR/gallery3.jpg" alt="Pahalgam" style="width:100%;cursor:pointer;"></div>
+<div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Dal+Lake" style="width:100%;cursor:pointer;"></div>
+<div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Gulmarg" style="width:100%;cursor:pointer;"></div>
+<div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Pahalgam" style="width:100%;cursor:pointer;"></div>
 </div>
 </section>
 
 <section id="reviews">
-<h2>Customer Reviews</h2>
+<h2>Customer <span>Reviews</span></h2>
 <div class="reviews" id="reviews-container"></div>
 
 <h3>Submit Your Review</h3>
@@ -100,24 +101,20 @@ button.submit-btn:hover{background:#005f86;}
 <option value="5">5 Stars</option>
 </select>
 <textarea id="reviewer-comment" rows="4" placeholder="Write your review..." required></textarea>
-<button type="submit" class="submit-btn">Submit Review</button>
+<button type="submit">Submit Review</button>
 </form>
 </section>
 
 <section id="contact">
-<h2>Contact Us</h2>
+<h2>Contact <span>Us</span></h2>
 <p>Email: <a href="mailto:travelkashmir11@gmail.com">travelkashmir11@gmail.com</a></p>
 <p>Phone: <a href="tel:+918899434467">+91 88994 34467</a></p>
 <p><strong>Address:</strong> Srinagar, Jammu and Kashmir 190001</p>
 </section>
 
-<div class="contact-buttons">
-<a href="tel:+918899434467" class="call-btn">Call Now</a>
-<a href="https://wa.me/918899434467" class="whatsapp-btn">WhatsApp</a>
-</div>
+<div class="lightbox" id="lightbox"><img></div>
 
 <footer>© 2026 Travel Kashmir Now</footer>
-<div class="lightbox" id="lightbox"><img></div>
 
 <!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -125,54 +122,44 @@ button.submit-btn:hover{background:#005f86;}
 <script>
 // 🔹 Replace with your Firebase config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  /* FIREBASE CONFIG GOES HERE */
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 // Load reviews live
-function loadReviews() {
+db.collection("reviews").orderBy("timestamp","desc").onSnapshot(snapshot=>{
   const container = document.getElementById('reviews-container');
-  db.collection("reviews").orderBy("timestamp","desc")
-    .onSnapshot(snapshot=>{
-      container.innerHTML = '';
-      snapshot.forEach(doc=>{
-        const d = doc.data();
-        const stars = '⭐'.repeat(d.rating);
-        const div = document.createElement('div');
-        div.className = 'review';
-        div.innerHTML = `<h3>${d.name}</h3><div class="review-stars">${stars}</div><p>${d.comment}</p>`;
-        container.appendChild(div);
-      });
-    });
-}
-loadReviews();
+  container.innerHTML='';
+  snapshot.forEach(doc=>{
+    const d = doc.data();
+    const stars = '⭐'.repeat(d.rating);
+    const div = document.createElement('div');
+    div.className='review';
+    div.innerHTML=`<h3>${d.name}</h3><div class="review-stars">${stars}</div><p>${d.comment}</p>`;
+    container.appendChild(div);
+  });
+});
 
 // Submit review
 document.getElementById('review-form').addEventListener('submit', e=>{
   e.preventDefault();
-  const name = document.getElementById('reviewer-name').value;
-  const rating = parseInt(document.getElementById('reviewer-rating').value);
-  const comment = document.getElementById('reviewer-comment').value;
+  const name=document.getElementById('reviewer-name').value;
+  const rating=parseInt(document.getElementById('reviewer-rating').value);
+  const comment=document.getElementById('reviewer-comment').value;
   db.collection("reviews").add({
-    name,
-    rating,
-    comment,
-    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    name,rating,comment,
+    timestamp:firebase.firestore.FieldValue.serverTimestamp()
   }).then(()=>{e.target.reset();});
 });
 
-// Lightbox
-const lightbox = document.getElementById('lightbox');
+// Gallery lightbox
+const lightbox=document.getElementById('lightbox');
 document.querySelectorAll('.gallery img').forEach(img=>{
-  img.onclick = ()=>{lightbox.style.display='flex'; lightbox.querySelector('img').src = img.src;}
+  img.onclick=()=>{lightbox.style.display='flex';lightbox.querySelector('img').src=img.src;}
 });
-lightbox.onclick = ()=>{lightbox.style.display='none';};
+lightbox.onclick=()=>{lightbox.style.display='none';};
 </script>
+
 </body>
 </html>
